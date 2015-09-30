@@ -30,3 +30,44 @@ body {
   display: block;
   clear: both;
 }
+
+.nav-container {
+  background-color: hsl(175, 100%, 4%);
+  box-shadow: 0 5px 10px hsla(175, 100%, 8%, 0.2);
+  border-bottom: 1px solid hsla(355, 100%, 98%, 0.5);
+}
+
+
+.header-nav {
+  max-width: 900px;
+  margin: 0 auto;
+  color: hsl(355, 100%, 98%);
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.header-logo, .header-menu li {
+  float: left;
+}
+
+.header-menu {
+  float: right;
+}
+
+.header-nav a {
+  display: block;
+  padding: 5px 15px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.header-nav li a {
+  font-size: 14px;
+}
+
+.header-nav a:hover {
+  box-shadow: 0 -2px 1px hsl(235, 100%, 70%) inset;
+  text-shadow: 0 1px 1px hsl(235, 100%, 70%);
+}
