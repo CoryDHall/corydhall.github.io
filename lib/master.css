@@ -1,6 +1,6 @@
 /*RESET*/
 
-html, body, nav, h1, a, ul, li, main, header, article, footer {
+html, body, nav, h1, a, ul, li, main, header, article, footer, p {
   border: 0;
   margin: 0;
   padding: 0;
@@ -23,6 +23,18 @@ ul {
 
 body {
   font-family: sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(0.25deg, hsl(355, 100%, 50%), hsl(175, 100%, 50%));
+  background-position: 100% 100%;
+  background-size: 100% 5px;
+}
+
+html {
+  /*overflow: hidden;*/
 }
 
 .clearfix::after {
@@ -35,12 +47,19 @@ body {
   background-color: hsl(175, 100%, 4%);
   box-shadow: 0 5px 10px hsla(175, 100%, 8%, 0.2);
   border-bottom: 1px solid hsla(355, 100%, 98%, 0.5);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
 }
-
 
 .header-nav {
   max-width: 900px;
   margin: 0 auto;
+}
+
+.header-nav {
   color: hsl(355, 100%, 98%);
   font-weight: bold;
   text-align: center;
@@ -48,7 +67,7 @@ body {
   letter-spacing: 1.5px;
 }
 
-.header-logo, .header-menu li {
+.header-logo, .header-menu li, .footer-links li {
   float: left;
 }
 
@@ -58,7 +77,7 @@ body {
 
 .header-nav a {
   display: block;
-  padding: 5px 15px;
+  padding: 10px 15px;
   font-size: 20px;
   line-height: 20px;
 }
@@ -70,4 +89,74 @@ body {
 .header-nav a:hover {
   box-shadow: 0 -2px 1px hsl(235, 100%, 70%) inset;
   text-shadow: 0 1px 1px hsl(235, 100%, 70%);
+}
+
+main {
+  margin: 20px;
+  position: absolute;
+  left: 0;
+  right: 30%;
+}
+
+.content {
+  /*height: 30px;*/
+  padding: 5px;
+  margin: 5px;
+  width: 0;
+  height: 0;
+  padding: 4px;
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.content.modal:target {
+  max-width: 300px;
+}
+
+.content:target {
+  border-radius: 3px;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  box-shadow: 0 8px 16px hsla(175, 100%, 8%, 0.2);
+  z-index: 10;
+}
+
+footer, article {
+  background: white;
+  box-shadow: 0 2px 4px hsla(175, 100%, 8%, 0.2);
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  padding: 15px 5px;
+  margin: 20px;
+  left: 0;
+  right: 40%;
+  max-width: 300px;
+  bottom: 0;
+}
+
+.footer-links {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.footer-links li {
+  min-width: 50%;
+}
+
+.footer-links li a {
+  display: block;
+  padding: 10px 1px;
+  font-size: 14px;
+}
+
+.legal {
+  color: hsl(235, 5%, 50%);
+  font-size: 11px;
+  padding-bottom: 10px;
 }
