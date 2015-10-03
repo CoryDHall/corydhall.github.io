@@ -85,5 +85,26 @@
         <small>Copyright (c) 2015 Cory D. Hall All Rights Reserved.<small>
       </p>
     </footer>
+    <script type="text/javascript">
+      var anim = new Anim();
+      // anim.setToOpen($('footer, article'));
+      anim.setToOpen($('footer, article, nav'), "slowest");
+      $('footer, article').click(function (e) {
+        var $this = $(this);
+        switch ($this.prop("data-state")) {
+          case "closed":
+            anim.open($this, "fast");
+            break;
+          case "open":
+            anim.close($this, "slower");
+            break;
+        }
+      });
+      $('article').hover(function () {
+        anim.over($(this), "fastest");
+      }, function () {
+        anim.out($(this), "slowest");
+      });
+    </script>
   </body>
 </html>

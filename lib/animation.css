@@ -1,0 +1,37 @@
+.closed {
+  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8) !important;
+  -webkit-transform: rotateZ(-9deg);
+  transform: rotateZ(-9deg);
+}
+.over {
+  background-image: linear-gradient(270deg, hsla(70, 10%, 99%, 0.9), hsla(250, 30%, 95%, 0.1));
+}
+article {
+  -webkit-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+}
+.over.closed {
+}
+nav:not(.closed) {
+  -webkit-transform: rotateZ(6deg);
+  transform: rotateZ(6deg);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+  text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8);
+  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);
+  background: linear-gradient(90deg, hsla(250, 30%, 0%, 0.1), hsla(250, 30%, 10%, 0.3));
+}
+nav.closed {
+  -webkit-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+  box-shadow: 0 0 0 hsla(175, 100%, 8%, 0);
+}
+
+footer {
+  -webkit-transform: rotateZ(-0.5deg) scale(0.75);
+  transform: rotateZ(-0.5deg) scale(0.75);
+}
