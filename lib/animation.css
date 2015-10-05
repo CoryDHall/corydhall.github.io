@@ -1,10 +1,45 @@
-.closed {
-  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8) !important;
-  -webkit-transform: rotateZ(-9deg);
-  transform: rotateZ(-9deg);
+.content.closed {
+  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);
+  background: rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0);
+  height: 0;
+  width: 0;
+  max-height: 0;
+}
+.content:not(.closed) {
+  box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.8);
+  background: linear-gradient(rgba(0,0,0,0.25),  rgba(0,0,0,0.75));
+  border-radius: 0;
+  padding: 20px;
+  max-width: 100%;
+  min-height: 50%;
+  z-index: 10;
+
+}
+footer.closed {
+  font-size: 0;
+  height: 0;
+  padding: 5px;
+}
+footer.closed .legal {
+  font-size: 0;
+}
+footer:not(.closed) {
+  background: linear-gradient(45deg, rgba(0,0,0,0.5),  rgba(0,0,0,0.75));
+  box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.8);
+  left: 10%;
+  right: 10%;
+  font-size: 18px;
+  bottom: 50%;
+  -webkit-transform: scale(1.25) translateY(50%);
+  transform: scale(1.25) translateY(50%);
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  border-radius: 3px;
 }
 .over {
-  background-image: linear-gradient(270deg, hsla(70, 10%, 99%, 0.9), hsla(250, 30%, 95%, 0.1));
+  background-image: linear-gradient(305deg, hsla(250, 30%, 95%, 0.1), hsla(70, 10%, 99%, 0.2), hsla(250, 30%, 95%, 0.1));
+  /*text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8) !important;*/
 }
 article {
   -webkit-transform: rotateZ(0deg);
@@ -15,13 +50,14 @@ article {
 .over.closed {
 }
 nav:not(.closed) {
-  -webkit-transform: rotateZ(6deg);
-  transform: rotateZ(6deg);
+  /*-webkit-transform: rotateZ(6deg);
+  transform: rotateZ(6deg);*/
   -webkit-transform-origin: left;
   transform-origin: left;
   text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8);
   box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);
   background: linear-gradient(90deg, hsla(250, 30%, 0%, 0.1), hsla(250, 30%, 10%, 0.3));
+  /*margin: 0 0 0 auto;*/
 }
 nav.closed {
   -webkit-transform: rotateZ(0deg);
@@ -34,4 +70,12 @@ nav.closed {
 footer {
   -webkit-transform: rotateZ(-0.5deg) scale(0.75);
   transform: rotateZ(-0.5deg) scale(0.75);
+}
+
+.header-logo.closed {
+  -webkit-transform: scale(0) translateX(-250%);
+  transform: scale(0) translateX(-250%);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  margin-left: -100%;
 }

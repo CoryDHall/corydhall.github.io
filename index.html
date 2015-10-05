@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Cory D. Hall</title>
-    <link rel="stylesheet" href="lib/master.css" charset="utf-8">
-    <link rel="stylesheet" href="lib/animation.css" charset="utf-8">
-    <script src="lib/jquery-1.11.3.min.js" charset="utf-8"></script>
-    <script src="lib/TweenMax.min.js" charset="utf-8"></script>
-    <script src="lib/animations.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <header class="nav-container">
-      <nav class="header-nav clearfix">
-        <h1 class="header-logo"><a href="#">Cory D Hall</a></h1>
-        <ul class="header-menu clearfix">
-          <li>
-            <a href="#about">About Me</a>
-          </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="#resume">Resume</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+<head>
+  <meta charset="utf-8">
+  <title>Cory D. Hall</title>
+  <link rel="stylesheet" href="lib/master.css" charset="utf-8">
+  <link rel="stylesheet" href="lib/animation.css" charset="utf-8">
+  <script src="lib/jquery-1.11.3.min.js" charset="utf-8"></script>
+  <script src="lib/TweenMax.min.js" charset="utf-8"></script>
+  <script src="lib/animations.js" charset="utf-8"></script>
+</head>
+<body>
+  <header class="nav-container">
+    <nav class="header-nav clearfix">
+      <h1 class="header-logo"><a href="#">Cory D Hall</a></h1>
+      <ul class="header-menu clearfix">
+        <li>
+          <a href="#about">About Me</a>
+        </li>
+        <li>
+          <a href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a href="#resume">Resume</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
       </nav>
     </header>
     <main>
@@ -38,38 +38,40 @@
         [About Me]
       </article>
       <article class="content" id="portfolio">
-        [portfolio]
-      </article>
-      <article class="content modal" id="resume">
-        [resume]
-      </article>
-      <article class="content modal" id="contact">
-        [contact]
-        <ul>
+        <ul class="clearfix">
           <li>
-            <a href="@mailto:corydantehall@gmail.com">Shoot me an email</a>
+            <h3><a href="http://nsta.corydantehall.com" target="_blank">Nstagram</a></h3>
+            <figure>[img]</figure>
+            <p>
+              A clone of Instagram built with Backbone on Rails
+              <br>
+              <a>[github]</a>
+            </p>
           </li>
           <li>
-            <a href="http://linkedin.com/in/corydantehall">LinkedIn</a>
-          </li>
-          <li>
-            <a href="http://github.com/CoryDHall">GitHub</a>
-          </li>
-          <li>
-            <p>Phone: (757) 560-2155</p>
-          </li>
-          <li>
-            <p>Address:
-              <br>  35 Dodworth Street
-              <br>  #1
-              <br>  Brooklyn, NY 11221
+            <h3><a href="http://corydantehall.com/Asteroids" target="_blank">Asteroids</a></h3>
+            <figure>[img]</figure>
+            <p>
+              A transformation of the classic game, <em>Asteroids</em>,
+              built with Javascript, and the HTML5 Canvas API. Works on desktop
+              and mobile.
+              <br>
+              <a>[github]</a>
             </p>
           </li>
         </ul>
       </article>
+      <article class="content modal" id="resume">
+        [resume]
+      </article>
     </main>
-    <footer>
+    <footer id="contact">
       <ul class="footer-links clearfix">
+        <li>
+          <a href="@mailto:corydantehall@gmail.com" target="_blank">
+            Email
+          </a>
+        </li>
         <li>
           <a href="http://github.com/CoryDHall" target="_blank">
             GitHub
@@ -80,31 +82,47 @@
             LinkedIn
           </a>
         </li>
+        <li>
+          <a>
+            Phone: (757) 560-2155
+          </a>
+        </li>
       </ul>
       <p class="legal">
         <small>Copyright (c) 2015 Cory D. Hall All Rights Reserved.<small>
-      </p>
-    </footer>
-    <script type="text/javascript">
+        </p>
+      </footer>
+      <script type="text/javascript">
       var anim = new Anim();
-      // anim.setToOpen($('footer, article'));
-      anim.setToOpen($('footer, article, nav'), "slowest");
-      $('footer, article').click(function (e) {
+      anim.set($('.content, footer, .header-logo'), "closed");
+      anim.set($('nav'), "closed");
+      setTimeout(anim.open.bind(anim, $('.header-logo'), "normal"), 200);
+      setTimeout(anim.open.bind(anim, $('nav'), "slow"), 400);
+      var openTarget = function () {
+        var $current = $(window.location.hash);
+        anim.close($('.content, footer').not($current), "normal");
+        anim.open($current, "fast");
+      };
+
+      openTarget();
+      $('footer, article li').click(function (e) {
         var $this = $(this);
         switch ($this.prop("data-state")) {
           case "closed":
-            anim.open($this, "fast");
-            break;
+          anim.open($this, "fast");
+          break;
           case "open":
-            anim.close($this, "slower");
-            break;
+          anim.close($this, "slower");
+          break;
         }
       });
-      $('article').hover(function () {
+      $('article li').hover(function () {
         anim.over($(this), "fastest");
       }, function () {
         anim.out($(this), "slowest");
       });
-    </script>
-  </body>
-</html>
+      $(window).on('hashchange', openTarget);
+
+      </script>
+    </body>
+    </html>
