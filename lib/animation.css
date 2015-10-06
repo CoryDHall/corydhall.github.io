@@ -1,3 +1,19 @@
+.content, footer {
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+body {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+body * {
+  -webkit-perspective: 500px;
+  perspective: 500px;
+  -webkit-transform-style: inherit;
+  transform-style: inherit;
+  -webkit-perspective-origin: bottom center;
+  perspective-origin: bottom center;
+}
 .content.closed {
   box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);
   background: rgba(0,0,0,0.7);
@@ -6,40 +22,64 @@
   width: 0;
   max-height: 0;
 }
-.content:not(.closed) {
-  box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.8);
-  background: linear-gradient(rgba(0,0,0,0.25),  rgba(0,0,0,0.75));
-  border-radius: 0;
+
+.content.closed {
+  -webkit-transform: rotateX(315deg);
+  transform: rotateX(315deg);
+}
+
+footer.closed {
+  -webkit-transform: scaleZ(0.5);
+  transform: scaleZ(0.5);
+}
+.content:not(.closed), footer:not(.closed), #about section, .content:not(.closed) li {
+  box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.8), 0 -2px 0 hsla(175, 70%, 40%, 0.2) inset;
+  text-shadow: 0 8px 2px hsla(175, 10%, 8%, 0.4);
+  background: rgba(0,0,0,0.7);
+  border-radius: 2px;
+}
+.content:not(.closed), #about section {
   padding: 20px;
   max-width: 100%;
   min-height: 50%;
   z-index: 10;
-
 }
+
+#about:not(.closed), #portfolio:not(.closed) {
+  background: rgba(0,0,0,0);
+  box-shadow: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row-reverse;
+  flex-flow: row-reverse;
+}
+
+#about.closed * {
+  visibility: collapse;
+}
+
+
 footer.closed {
-  font-size: 0;
-  height: 0;
-  padding: 5px;
+  font-size: 10px;
+  height: 10px;
+  line-height: 9px;
+  padding: 0;
+}
+footer.closed * {
+  padding-top: 0;
+  margin-top: 0;
 }
 footer.closed .legal {
   font-size: 0;
 }
 footer:not(.closed) {
-  background: linear-gradient(45deg, rgba(0,0,0,0.5),  rgba(0,0,0,0.75));
-  box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.8);
   left: 10%;
   right: 10%;
   font-size: 18px;
   bottom: 50%;
-  -webkit-transform: scale(1.25) translateY(50%);
-  transform: scale(1.25) translateY(50%);
-  -webkit-transform-origin: bottom;
-  transform-origin: bottom;
   border-radius: 3px;
 }
 .over {
-  background-image: linear-gradient(305deg, hsla(250, 30%, 95%, 0.1), hsla(70, 10%, 99%, 0.2), hsla(250, 30%, 95%, 0.1));
-  /*text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8) !important;*/
 }
 article {
   -webkit-transform: rotateZ(0deg);
@@ -65,11 +105,6 @@ nav.closed {
   -webkit-transform-origin: left;
   transform-origin: left;
   box-shadow: 0 0 0 hsla(175, 100%, 8%, 0);
-}
-
-footer {
-  -webkit-transform: rotateZ(-0.5deg) scale(0.75);
-  transform: rotateZ(-0.5deg) scale(0.75);
 }
 
 .header-logo.closed {

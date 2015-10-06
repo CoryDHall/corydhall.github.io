@@ -1,6 +1,6 @@
 /*RESET*/
 
-html, body, nav, h1, h3, a, ul, li, main, header, article, footer, p, figure {
+html, body, nav, h1, h2, h3, a, ul, li, main, header, article, footer, p, figure, section {
   border: 0;
   margin: 0;
   padding: 0;
@@ -150,7 +150,10 @@ main {
   position: relative;
 }
 
-.content:target {}
+.content img {
+  max-width: 100%;
+  height: auto;
+}
 
 article {
   box-shadow: 0 2px 4px hsla(175, 100%, 8%, 0.8);
@@ -165,21 +168,21 @@ article {
   float: left;
 }
 .content ul {
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
+  white-space: normal;
+  width: 100%;
 }
 
 .content li {
-  width: 50%;
-  padding: 0 5px;
+  min-width: 30%;
+  padding: 10px 25px;
 }
 .content li a {
   padding: 0 20px;
   display: block;
 }
 
-figure {
-  width: 100%;
+.content li figure {
+  width: auto;
   max-height: 280px;
   text-align: center;
 }
@@ -191,14 +194,47 @@ footer, article {
   font-weight: bold;
 }
 
+
+#about figure {
+  -webkit-flex: content;
+  flex: content;
+  width: auto;
+  max-width: 12.5%;
+  margin-left: 20px;
+}
+
+#about figure img {
+  box-shadow: 0 4px 8px hsla(175, 0%, 8%, 0.8);
+  margin: 0 10px;
+}
+
+#about section {
+  float: left;
+  -webkit-flex: auto;
+  flex: auto;
+}
+
+.content h2 {
+  text-align: left;
+  font-size: 60px;
+  padding-bottom: 30px;
+}
+
+.content p {
+  font-size: 20px;
+  font-weight: 200;
+  text-align: right;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
 article {
 
 }
 
 article h3 {
-  font-size: 18px;
+  font-size: 28px;
   padding: 0;
-  border-bottom: 1px solid rgba(255,255,255, 0.4);
 }
 
 footer {
@@ -224,11 +260,42 @@ footer {
   flex-direction: row;
 }
 
-.footer-links li, .content li {
+.footer-links li{
   min-width: 20%;
   margin: 0 auto;
   -webkit-flex: auto;
 	flex: auto;
+}
+#portfolio.content ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+#portfolio.content li * {
+  width: auto;
+  max-width: 400px;
+}
+
+#portfolio.content li {
+  -webkit-flex: 0 2 content;
+  flex: 0 2 content;
+  margin: 0;
+  width: auto;
+  min-width: 20%;
+  min-height: 40%;
+  max-width: 34%;
+  max-height: 100%;
+  height: auto;
+}
+
+#portfolio li p {
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .footer-links li a {
