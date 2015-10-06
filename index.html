@@ -98,8 +98,11 @@
       anim.set($('nav'), "closed");
       setTimeout(anim.open.bind(anim, $('.header-logo'), "normal"), 200);
       setTimeout(anim.open.bind(anim, $('nav'), "slow"), 400);
+      var defaultTarget = "#about";
       var openTarget = function () {
-        var $current = $(window.location.hash);
+        var hash = window.location.hash;
+        hash = hash.length == 0 ? defaultTarget : hash;
+        var $current = $(hash);
         anim.close($('.content, footer').not($current), "normal");
         anim.open($current, "fast");
       };
