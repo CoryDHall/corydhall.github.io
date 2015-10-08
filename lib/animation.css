@@ -15,8 +15,8 @@ body * {
   perspective-origin: bottom center;
 }
 .content.closed {
-  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);
-  background: rgba(0,0,0,0.7);
+  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.008);
+  background: rgba(0,0,0,0.0007);
   color: rgba(255,255,255,0);
   height: 0;
   width: 0;
