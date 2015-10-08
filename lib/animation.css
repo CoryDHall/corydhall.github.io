@@ -34,7 +34,7 @@ footer.closed {
 }
 .content:not(.closed), footer:not(.closed), #about section, .content:not(.closed) li {
   box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.0), 0 -2px 0 hsla(175, 70%, 40%, 0.0) inset;
-  text-shadow: 0 8px 2px hsla(175, 10%, 8%, 0.4);
+  text-shadow: 0 4px 8px hsla(175, 10%, 8%, 0.4);
   background: rgba(0,0,0,0.01);
   border-radius: 2px;
 }
@@ -54,7 +54,7 @@ footer.closed {
   flex-flow: row-reverse;
 }
 
-#about.closed * {
+.content.closed * {
   visibility: collapse;
 }
 
