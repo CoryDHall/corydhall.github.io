@@ -50,8 +50,8 @@ html {
 }
 
 .nav-container {
-  background-color: hsl(175, 100%, 4%);
-  box-shadow: 0 5px 10px hsla(175, 100%, 8%, 0.2);
+  background-color: hsla(175, 100%, 4%, 0.1);
+  box-shadow: 0 5px 10px hsla(175, 100%, 8%, 0.0);
   border-bottom: 1px solid hsla(355, 100%, 98%, 0.5);
   position: relative;
   top: 0px;
@@ -156,7 +156,7 @@ main {
 }
 
 article {
-  box-shadow: 0 2px 4px hsla(175, 100%, 8%, 0.8);
+  box-shadow: 0 2px 4px hsla(175, 100%, 8%, 0.008);
   /*text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8);*/
   width: 100%;
   margin: 5px;
@@ -189,7 +189,7 @@ article {
 
 footer, article {
   text-align: center;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.0);
   color: white;
   font-weight: bold;
 }
@@ -240,7 +240,7 @@ article h3 {
 footer {
   -webkit-flex: auto;
   flex: auto;
-  box-shadow: 0 2px 2px hsla(175, 100%, 8%, 0.8);
+  box-shadow: 0 2px 2px hsla(175, 100%, 8%, 0.008);
   position: absolute;
   padding: 15px 5px;
   margin: 20px;
@@ -304,7 +304,7 @@ footer {
 }
 
 .legal {
-  color: hsl(235, 5%, 50%);
+  color: hsl(235, 5%, 80%);
   font-size: 11px;
   padding: 5px 0 10px;
 }
