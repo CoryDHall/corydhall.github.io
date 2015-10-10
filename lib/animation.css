@@ -115,7 +115,8 @@ nav.closed {
   transform: scale(0) translateX(-250%);
   -webkit-transform-origin: center;
   transform-origin: center;
-  margin-left: -100%;
+  margin-left: -10%;
+  opacity: 0.5;
 }
 
 article h3 a:hover::after {
