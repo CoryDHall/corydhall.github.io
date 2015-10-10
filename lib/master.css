@@ -1,6 +1,6 @@
 /*RESET*/
 
-html, body, nav, h1, h2, h3, a, ul, li, main, header, article, footer, p, figure, section {
+html, body, nav, h1, h2, h3, a, ul, li, main, header, article, footer, p, figure, section, svg {
   border: 0;
   margin: 0;
   padding: 0;
@@ -27,8 +27,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-image: linear-gradient(0.25deg, hsl(355, 4%, 10%), hsl(235, 5%, 2%));
+  height: 100%;
+  background-image: linear-gradient(0.25deg, hsl(355, 4%, 25%), hsl(235, 5%, 2%));
   background-position: 100% 100%;
   background-size: 100% 5px;
   display: -webkit-flex;
@@ -125,7 +125,7 @@ html {
 }
 
 main {
-  margin: 40px;
+  margin: 40px 10px;
   padding-top: 30px;
   position: absolute;
   left: 0;
@@ -214,6 +214,7 @@ footer, article {
   flex: auto;
 }
 
+
 .content h2 {
   text-align: left;
   font-size: 60px;
@@ -268,8 +269,8 @@ footer {
 #portfolio.content ul {
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: space-between;
@@ -281,7 +282,7 @@ footer {
 }
 
 #portfolio.content li {
-  -webkit-flex: auto;
+  -webkit-flex: 1 0.5 auto;
   flex: auto;
   margin: 0;
   /*width: 100%;*/
@@ -317,14 +318,14 @@ footer {
   text-align: left;
   font-size: 13px;
   line-height: 16px;
-  padding: 5px 10px 10px;
+  padding: 5px 10px 5px;
 }
 
 #portfolio img {
-  height: 100%;
-  width: auto;
-  max-height: 300px;
-  max-width: 300px;
+  max-width: 100%;
+  height: auto;
+  /*max-height: 300px;
+  max-width: 300px;*/
 }
 
 .footer-links li a {
@@ -332,8 +333,42 @@ footer {
   padding: 2.5px;
 }
 
+.footer-links img {
+  max-height: 12px;
+  vertical-align: text-top;
+  -webkit-transform: scale(2) translateX(-25%);
+  transform: scale(2) translateX(-25%);
+}
+
 .legal {
   color: hsl(235, 5%, 80%);
   font-size: 11px;
   padding: 5px 0 10px;
+}
+
+.skillset img {
+  height: 100px;
+}
+
+#about ul.skillset {
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+#about .skillset li {
+  padding: 0;
+}
+
+#portfolio li p a {
+  padding: 0;
+}
+
+#portfolio a img {
+  max-height: 20px;
+  margin-top: 5px;
+  width: 100%;
 }

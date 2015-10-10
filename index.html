@@ -44,6 +44,50 @@
           <p>
             [text][Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]
           </p>
+          <ul class="skillset">
+            <li>
+              <img src="assets/HTML5_1Color_White.svg" alt="html5" />
+            </li>
+            <li>
+              <img src="assets/html5_css3_styling.svg" alt="css3" />
+            </li>
+            <li>
+              <img src="assets/html5_3d_effects.svg" alt="css3" />
+            </li>
+            <li>
+              <img src="assets/js.svg" alt="css3" />
+            </li>
+            <li>
+              <img src="assets/jquery.svg" alt="css3" />
+            </li>
+            <li>
+              <img src="assets/Ruby_logo.svg" alt="css3" />
+            </li>
+            <li>
+              <img src="assets/1444444993_Ruby_on_Rails_2.svg" alt="css3" />
+            </li>
+            <li>
+              <img src="assets/Backbone.js_logo.svg" alt="css3" />
+            </li>
+            <li>
+              <img src="assets/Postgresql_elephant.svg" alt="PostgresSQL" />
+            </li>
+            <li>
+              <img src="assets/Git_icon.svg" alt="GIT" />
+            </li>
+            <li>
+              <img src="assets/Oauth_logo.svg" alt="OAuth" />
+            </li>
+            <li>
+              <img src="assets/AmazonWebservices_Logo.svg" alt="Amazon AWS" />
+            </li>
+            <li>
+              <img src="assets/Sass_Logo_Color.svg" alt="SASS" />
+            </li>
+            <li>
+              <img src="assets/Vimlogo.svg" alt="SASS" />
+            </li>
+          </ul>
         </section>
       </article>
       <article class="content" id="portfolio">
@@ -55,7 +99,7 @@
               <div><p>
                 A clone of Instagram built with Backbone on Rails
                 <br>
-                <a>[github]</a>
+                <a><img src="assets/github.svg" alt="github" /></a>
               </p></div>
             </figure>
           </li>
@@ -68,7 +112,7 @@
                 built with Javascript, and the HTML5 Canvas API. Works on desktop
                 and mobile.
                 <br>
-                <a>[github]</a>
+                <a><img src="assets/github.svg" alt="github" /></a>
               </p></div>
             </figure>
           </li>
@@ -78,7 +122,7 @@
               <img src="assets/ghost.png" alt="Ghost" class="project-photo">
               <div><p>
                 A simple word game with a complex, expandable player interface, and a set of AI players implementing machine learning algorithms of varying complexity.
-                <a>[github]</a>
+                <a><img src="assets/github.svg" alt="github" /></a>
               </p></div>
             </figure>
           </li>
@@ -88,7 +132,7 @@
               <img src="assets/grid.png" alt="Grid" class="project-photo">
               <div><p>
                 A ruby module that packages together common 2d Array operations into easy to use methods.
-                <a>[github]</a>
+                <a><img src="assets/github.svg" alt="github" /></a>
               </p></div>
             </figure>
           </li>
@@ -102,16 +146,19 @@
       <ul class="footer-links clearfix">
         <li>
           <a href="@mailto:corydantehall@gmail.com" target="_blank">
+            <img src="assets/paperplane.svg" alt="email" />
             Email
           </a>
         </li>
         <li>
           <a href="http://github.com/CoryDHall" target="_blank">
+            <img src="assets/github.svg" alt="github" />
             GitHub
           </a>
         </li>
         <li>
           <a href="http://linkedin.com/in/corydantehall" target="_blank">
+            <img src="assets/linkedin.svg" alt="linkedin" />
             LinkedIn
           </a>
         </li>
@@ -152,10 +199,15 @@
           break;
         }
       });
-      $('article li').hover(function () {
+      $('article li, #contact li').hover(function () {
         anim.over($(this), "fastest");
       }, function () {
         anim.out($(this), "slowest");
+      });
+      $('.skillset img').hover(function () {
+        anim.over($(this), "now");
+      }, function () {
+          anim.out($(this), "longRandom");
       });
       $(window).on('hashchange', openTarget);
 

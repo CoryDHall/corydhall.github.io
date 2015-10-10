@@ -79,6 +79,9 @@ footer:not(.closed) {
   bottom: 50%;
   border-radius: 3px;
 }
+footer:not(.closed) img {
+  max-height: 20px;
+}
 .over {
 }
 article {
@@ -113,4 +116,46 @@ nav.closed {
   -webkit-transform-origin: center;
   transform-origin: center;
   margin-left: -100%;
+}
+
+article h3 a:hover::after {
+  content: "";
+  background-image: url("../assets/fwrd_arrow.svg");
+  background-size: contain;
+  float: right;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.over .skillset img {
+  opacity: 0.5;
+}
+.skillset {
+  /*background: #000;*/
+  filter: invert(10%);
+  -webkit-filter: invert(10%);
+}
+.skillset img {
+  opacity: 0.2;
+  /*-webkit-filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));
+  filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));*/
+  /*-webkit-filter:  drop-shadow(0 8px 16px hsla(175, 100%, 0%, 0.5));
+  filter:  drop-shadow(0 8px 16px hsla(175, 100%, 0%, 0.5));*/
+}
+
+.skillset img.over {
+  opacity: 1;
+}
+
+
+#contact {
+  -webkit-filter: drop-shadow(0 1px 2px hsla(175, 100%, 0%, 0.8));
+  filter: drop-shadow(0 1px 2px hsla(175, 100%, 0%, 0.8));
+}
+
+#contact li.over {
+  /*text-shadow: 0 8px 4px hsla(175, 100%, 50%, 1);*/
+  -webkit-filter: drop-shadow(0 0 8px hsla(175, 0%, 50%, 0.9));
+  filter: drop-shadow(0 0 8px hsla(175, 0%, 50%, 0.9));
 }
