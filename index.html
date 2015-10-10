@@ -16,7 +16,7 @@
       <h1 class="header-logo"><a href="#">Cory D Hall</a></h1>
       <ul class="header-menu clearfix">
         <li>
-          <a href="#about">About Me</a>
+          <a href="#about" >About Me</a>
         </li>
         <li>
           <a href="#portfolio">Portfolio</a>
@@ -46,46 +46,49 @@
           </p>
           <ul class="skillset">
             <li>
-              <img src="assets/HTML5_1Color_White.svg" alt="html5" />
+              <img src="assets/HTML5_1Color_White.svg" draggable="false" alt="html5" title="HTML 5" />
             </li>
             <li>
-              <img src="assets/html5_css3_styling.svg" alt="css3" />
+              <img src="assets/html5_css3_styling.svg" draggable="false" alt="css3" title="CSS 3" />
             </li>
             <li>
-              <img src="assets/html5_3d_effects.svg" alt="css3" />
+              <img src="assets/html5_3d_effects.svg" draggable="false" alt="3d transforms" title="HTML 5 3D Effects"/>
             </li>
             <li>
-              <img src="assets/js.svg" alt="css3" />
+              <img src="assets/js.svg" alt="javascript" draggable="false" title="JavaScript"/>
             </li>
             <li>
-              <img src="assets/jquery.svg" alt="css3" />
+              <img src="assets/jquery.svg" alt="jquery" draggable="false" title="jQuery"/>
             </li>
             <li>
-              <img src="assets/Ruby_logo.svg" alt="css3" />
+              <img src="assets/Ruby_logo.svg" alt="ruby" draggable="false" title="Ruby"/>
             </li>
             <li>
-              <img src="assets/1444444993_Ruby_on_Rails_2.svg" alt="css3" />
+              <img src="assets/1444444993_Ruby_on_Rails_2.svg" draggable="false" alt="rails" title="Ruby on Rails"/>
             </li>
             <li>
-              <img src="assets/Backbone.js_logo.svg" alt="css3" />
+              <img src="assets/Backbone.js_logo.svg" draggable="false" alt="backbone.js" title="Backbone.js"/>
             </li>
             <li>
-              <img src="assets/Postgresql_elephant.svg" alt="PostgresSQL" />
+              <img src="assets/Postgresql_elephant.svg" draggable="false" alt="PostgresSQL" title="PostgresSQL" />
             </li>
             <li>
-              <img src="assets/Git_icon.svg" alt="GIT" />
+              <img src="assets/Git_icon.svg" draggable="false" alt="GIT" title="GIT" />
             </li>
             <li>
-              <img src="assets/Oauth_logo.svg" alt="OAuth" />
+              <img src="assets/Node.js_logo.svg" draggable="false" alt="node" title="Node.js"/>
             </li>
             <li>
-              <img src="assets/AmazonWebservices_Logo.svg" alt="Amazon AWS" />
+              <img src="assets/Oauth_logo.svg" draggable="false" alt="OAuth" title="OAuth"/>
             </li>
             <li>
-              <img src="assets/Sass_Logo_Color.svg" alt="SASS" />
+              <img src="assets/AmazonWebservices_Logo.svg" draggable="false" alt="Amazon AWS" title="Amazon Web Services"/>
             </li>
             <li>
-              <img src="assets/Vimlogo.svg" alt="SASS" />
+              <img src="assets/Sass_Logo_Color.svg" draggable="false" alt="SASS" title="SASS/SCSS"/>
+            </li>
+            <li>
+              <img src="assets/Vimlogo.svg" draggable="false" alt="Vim" title="Vim"/>
             </li>
           </ul>
         </section>
@@ -145,7 +148,7 @@
     <footer id="contact">
       <ul class="footer-links clearfix">
         <li>
-          <a href="@mailto:corydantehall@gmail.com" target="_blank">
+          <a href="mailto:corydantehall@gmail.com" target="_blank">
             <img src="assets/paperplane.svg" alt="email" />
             Email
           </a>
@@ -181,6 +184,7 @@
       var defaultTarget = "#about";
       var openTarget = function () {
         var hash = window.location.hash;
+        window.scrollTo(0);
         hash = hash.length == 0 ? defaultTarget : hash;
         var $current = $(hash);
         anim.close($('.content, footer').not($current), "normal");
@@ -188,17 +192,17 @@
       };
 
       openTarget();
-      $('footer, article li').click(function (e) {
-        var $this = $(this);
-        switch ($this.prop("data-state")) {
-          case "closed":
-          anim.open($this, "fast");
-          break;
-          case "open":
-          anim.close($this, "slower");
-          break;
-        }
-      });
+      // $('footer, article li').click(function (e) {
+      //   var $this = $(this);
+      //   switch ($this.prop("data-state")) {
+      //     case "closed":
+      //     anim.open($this, "fast");
+      //     break;
+      //     case "open":
+      //     anim.close($this, "slower");
+      //     break;
+      //   }
+      // });
       $('article li, #contact li').hover(function () {
         anim.over($(this), "fastest");
       }, function () {
