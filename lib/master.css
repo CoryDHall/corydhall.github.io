@@ -148,7 +148,8 @@ main {
   padding: 5px;
   margin: 5px;
   border-radius: 3px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -216,6 +217,11 @@ footer, article {
   flex: auto;
 }
 
+#resume h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
 
 .content h2 {
   text-align: left;
@@ -246,11 +252,12 @@ footer {
   box-shadow: 0 2px 2px hsla(175, 100%, 8%, 0.008);
   position: fixed;
   padding: 15px 5px;
-  margin: 20px;
+  margin: 2px 20px 0;
   left: 0;
   right: 40%;
   bottom: 0;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .footer-links, .content ul {

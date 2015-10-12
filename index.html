@@ -88,6 +88,9 @@
               <img src="assets/Sass_Logo_Color.svg" draggable="false" alt="SASS" title="SASS/SCSS"/>
             </li>
             <li>
+              <img src="assets/Heroku_logo.svg" draggable="false" alt="Heroku" title="Heroku"/>
+            </li>
+            <li>
               <img src="assets/Vimlogo.svg" draggable="false" alt="Vim" title="Vim"/>
             </li>
           </ul>
@@ -142,7 +145,7 @@
         </ul>
       </article>
       <article class="content modal" id="resume">
-        [resume]
+        <h1><a href="assets/cory_hall_resume_2015_10.pdf">Download My Resume!</a></h1>
       </article>
     </main>
     <footer id="contact">
@@ -167,7 +170,8 @@
         </li>
         <li>
           <a>
-            Phone: (757) 560-2155
+            <img src="assets/phone.svg" alt="phone" />
+            (757) 560-2155
           </a>
         </li>
       </ul>
@@ -203,7 +207,7 @@
       //     break;
       //   }
       // });
-      $('article li, #contact li').hover(function () {
+      $('article li, #contact li, a').hover(function () {
         anim.over($(this), "fastest");
       }, function () {
         anim.out($(this), "slowest");

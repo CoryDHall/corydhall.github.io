@@ -61,9 +61,9 @@ footer.closed {
 
 footer.closed {
   font-size: 10px;
-  height: 10px;
-  line-height: 9px;
-  padding: 0;
+  height: 25px;
+  line-height: 12px;
+  padding: 2px 0;
 }
 footer.closed * {
   padding-top: 0;
@@ -148,7 +148,9 @@ article h3 a:hover::after {
 .skillset img.over {
   opacity: 1;
 }
-
+.closed {
+  overflow: hidden !important;
+}
 
 #contact {
   -webkit-filter: drop-shadow(0 1px 2px hsla(175, 100%, 0%, 0.8));
@@ -159,4 +161,15 @@ article h3 a:hover::after {
   /*text-shadow: 0 8px 4px hsla(175, 100%, 50%, 1);*/
   -webkit-filter: drop-shadow(0 0 8px hsla(175, 0%, 50%, 0.9));
   filter: drop-shadow(0 0 8px hsla(175, 0%, 50%, 0.9));
+}
+
+#resume a.over {
+  /*text-shadow: 0 8px 16px hsla(175, 100%, 0%, 0.8);*/
+}
+a:not(.over) {
+  text-shadow: 0 8px 32px hsla(175, 100%, 100%, 0.0);
+}
+a.over {
+  text-shadow: 0 0 0 hsla(175, 100%, 100%, 0.5);
+  color: hsl(235, 100%, 70%);
 }
