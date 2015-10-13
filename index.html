@@ -218,6 +218,13 @@ I'm a web developer based in Brooklyn with a background in architecture and desi
       }, function () {
           anim.out($(this), "longRandom");
       });
+      $(window).on('touchstart', function() {
+        anim.over($('a'), "fast");
+        setTimeout(function() {
+          anim.out($('a'), "slowest");
+        }, 50);
+      });
+
       $(window).on('hashchange', openTarget);
 
       </script>
