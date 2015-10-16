@@ -130,16 +130,16 @@ main {
   top: 0;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
+  /*-webkit-flex-direction: column;
   flex-direction: column;
   -webkit-align-items: center;
-  align-items: center;
+  align-items: center;*/
   overflow: hidden;
 }
 
 .content {
-  -webkit-flex: auto;
-  flex: auto;
+  /*-webkit-flex: auto;
+  flex: auto;*/
   padding: 5px;
   margin: 5px;
   border-radius: 3px;
@@ -288,14 +288,15 @@ footer {
 }
 
 #portfolio.content ul {
+  /*display: block;*/
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 #portfolio.content li figure {
   position: relative;

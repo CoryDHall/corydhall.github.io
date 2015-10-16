@@ -208,9 +208,9 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
         // window.scrollTo(0,0);
         hash = hash.length == 0 ? defaultTarget : hash;
         var $current = $(hash);
-        anim.close($('.content, footer, .header-nav li a').not($current), "normal");
+        anim.close($('.content, footer, .header-nav li a').not($current), "fastest");
         openTab($current);
-        anim.open($('[href="' + hash + '"]'), "fast");
+        setTimeout(anim.open.bind(anim, $('[href="' + hash + '"]'), "fast"), 100);
         oldTarget = hash;
       };
       function openTab($current) {
@@ -236,9 +236,9 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       //   }
       // });
       $('article li, #contact li, a').hover(function () {
-        anim.over($(this), "normal");
+        anim.over($(this), "slow");
       }, function () {
-        anim.out($(this), "slowest");
+        anim.out($(this), "fast");
       });
       // $(window).on('touchstart', function() {
       //   anim.over($('a'), "fastest");
