@@ -188,7 +188,7 @@
       var defaultTarget = "#about";
       var openTarget = function () {
         var hash = window.location.hash;
-        window.scrollTo(0);
+        window.scrollTo(0,0);
         hash = hash.length == 0 ? defaultTarget : hash;
         var $current = $(hash);
         anim.close($('.content, footer').not($current), "normal");
