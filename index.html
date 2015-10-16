@@ -198,14 +198,20 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       setTimeout(anim.open.bind(anim, $('.header-logo'), "slower"), 500);
       setTimeout(anim.open.bind(anim, $('nav'), "slow"), 400);
       var defaultTarget = "#about";
+      oldTarget = null;
       var openTarget = function () {
         var hash = window.location.hash;
-        window.scrollTo(0,0);
+        if ((oldTarget == defaultTarget && hash == "") || (oldTarget === "" && hash == defaultTarget)) {
+          oldTarget = hash;
+          return;
+        }
+        // window.scrollTo(0,0);
         hash = hash.length == 0 ? defaultTarget : hash;
         var $current = $(hash);
         anim.close($('.content, footer, .header-nav li a').not($current), "normal");
         openTab($current);
         anim.open($('[href="' + hash + '"]'), "fast");
+        oldTarget = hash;
       };
       function openTab($current) {
         anim.open($current, "fast");
@@ -217,7 +223,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
         });
       }
 
-      openTarget();
+      setTimeout(openTarget, 1000);
       // $('footer, article li').click(function (e) {
       //   var $this = $(this);
       //   switch ($this.prop("data-state")) {
@@ -234,12 +240,12 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       }, function () {
         anim.out($(this), "slowest");
       });
-      $(window).on('touchstart', function() {
-        anim.over($('a'), "fastest");
-        setTimeout(function() {
-          anim.out($('a'), "fast");
-        }, 200);
-      });
+      // $(window).on('touchstart', function() {
+      //   anim.over($('a'), "fastest");
+      //   setTimeout(function() {
+      //     anim.out($('a'), "fast");
+      //   }, 200);
+      // });
 
       $(window).on('hashchange', openTarget);
 
