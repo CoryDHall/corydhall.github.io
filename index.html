@@ -42,7 +42,8 @@
         <section>
           <h2>Hi, I'm Cory</h2>
           <p>
-            [text][Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]
+I'm a web developer based in Brooklyn with a background in architecture and design. and I get off on Big Data and Micro-Optimization. Great process begets great design—Ove Arup says it best:
+<blockquote>Engineering problems are under-defined, there are many solutions, good, bad and indifferent. The art is to arrive at a good solution. This is a creative activity, involving imagination, intuition and deliberate choice.</blockquote>
           </p>
           <ul class="skillset">
             <li>
@@ -217,6 +218,13 @@
       }, function () {
           anim.out($(this), "longRandom");
       });
+      $(window).on('touchstart', function() {
+        anim.over($('a'), "fast");
+        setTimeout(function() {
+          anim.out($('a'), "longRandom");
+        }, 200);
+      });
+
       $(window).on('hashchange', openTarget);
 
       </script>

@@ -1,6 +1,6 @@
 /*RESET*/
 
-html, body, nav, h1, h2, h3, a, ul, li, main, header, article, footer, p, figure, section, svg {
+html, body, nav, h1, h2, h3, a, ul, li, main, header, article, footer, p, figure, section, svg, blockquote {
   border: 0;
   margin: 0;
   padding: 0;
@@ -254,7 +254,7 @@ footer {
   padding: 15px 5px;
   margin: 2px 20px 0;
   left: 0;
-  right: 40%;
+  right: 30%;
   bottom: 0;
   font-size: 14px;
   overflow: hidden;
@@ -267,6 +267,7 @@ footer {
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
+  white-space: nowrap;
 }
 
 .footer-links li{
@@ -274,6 +275,12 @@ footer {
   margin: 0 auto;
   -webkit-flex: auto;
 	flex: auto;
+  white-space: nowrap;
+}
+blockquote {
+  font-size: 28px;
+  font-weight: bold;
+  opacity: 0.7;
 }
 #portfolio.content ul {
   display: -webkit-flex;
