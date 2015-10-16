@@ -15,17 +15,21 @@ body * {
   perspective-origin: bottom center;
 }
 .content.closed {
-  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.008);
+  /*box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.008);
   background: rgba(0,0,0,0.0007);
-  color: rgba(255,255,255,0);
-  height: 0;
-  width: 0;
+  color: rgba(255,255,255,0);*/
+  /*height: 0;
+  width: 0;*/
   max-height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0 auto;
 }
 
 .content.closed {
-  -webkit-transform: rotateX(315deg);
-  transform: rotateX(315deg);
+  /*-webkit-transform: translateY(-1000%);
+  transform: translateY(-1000%);*/
+  /*visibility: hidden;*/
 }
 
 footer.closed {
@@ -55,7 +59,7 @@ footer.closed {
 }
 
 .content.closed * {
-  visibility: collapse;
+  /*visibility: collapse;*/
 }
 
 
@@ -81,6 +85,13 @@ footer:not(.closed) {
 }
 footer:not(.closed) img {
   max-height: 20px;
+}
+footer:not(.closed) .footer-links {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+footer:not(.closed) li {
+  margin-top: 20px;
 }
 .over {
 }
@@ -134,19 +145,54 @@ article h3 a:hover::after {
 }
 .skillset {
   /*background: #000;*/
-  filter: invert(10%);
-  -webkit-filter: invert(10%);
+}
+
+.skillset li {
+  overflow: visible;
 }
 .skillset img {
-  opacity: 0.2;
+  opacity: 0.5;
+  border-radius: 5px;
+  filter: invert(50%);
+  -webkit-filter: invert(50%);
+  margin-left: 10px;
+  margin-bottom: 10px;
   /*-webkit-filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));
   filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));*/
-  /*-webkit-filter:  drop-shadow(0 8px 16px hsla(175, 100%, 0%, 0.5));
-  filter:  drop-shadow(0 8px 16px hsla(175, 100%, 0%, 0.5));*/
+}
+
+.header-nav li a.closed.over {
+  box-shadow: 0 -2px 1px hsl(235, 100%, 70%) inset;
+  text-shadow: 0 1px 1px hsl(235, 100%, 70%);
+}
+.header-nav li a.closed:not(.over) {
+  box-shadow: 0 -100px 0px hsla(235, 100%, 70%, 0) inset;
+}
+
+.header-nav li a:not(.closed) {
+  box-shadow: 0 -10px 0px hsl(235, 100%, 100%) inset;
+  color: inherit;
+  cursor: auto;
+}
+
+.header-nav li a:not(.closed).over {
+  box-shadow: 0 100px 0px hsl(235, 100%, 100%) inset;
+  color: #000;
+  cursor: auto;
 }
 
 .skillset img.over {
   opacity: 1;
+  /*-webkit-filter: drop-shadow(0 8px 16px);
+  filter: drop-shadow(0 8px 16px);*/
+}
+
+.skillset img:hover::after {
+  content: attr("title") "";
+  display: block;
+  position: absolute;
+  font-size: 20px;
+  color: attr(data-fill);
 }
 .closed {
   overflow: hidden !important;

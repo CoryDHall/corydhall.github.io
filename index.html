@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+  <meta name="HandheldFriendly" content="true" />
   <title>Cory D. Hall</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="lib/master.css" charset="utf-8">
@@ -42,57 +44,57 @@
         <section>
           <h2>Hi, I'm Cory</h2>
           <p>
-I'm a web developer based in Brooklyn with a background in architecture and design. and I get off on Big Data and Micro-Optimization. Great process begets great design—Ove Arup says it best:
+I'm a <em>web developer</em> based in Brooklyn with a background in architecture and design. I get off on Big Data and Micro-Optimization and I believe great <em>process</em> begets great <em>design</em>—<strong>Ove Arup</strong> says it best:
 <blockquote>Engineering problems are under-defined, there are many solutions, good, bad and indifferent. The art is to arrive at a good solution. This is a creative activity, involving imagination, intuition and deliberate choice.</blockquote>
           </p>
           <ul class="skillset">
             <li>
-              <img src="assets/HTML5_1Color_White.svg" draggable="false" alt="html5" title="HTML 5" />
+              <img src="assets/HTML5_1Color_White.svg" draggable="false" alt="html5" title="HTML 5" data-fill="#dc501d"/>
             </li>
             <li>
-              <img src="assets/html5_css3_styling.svg" draggable="false" alt="css3" title="CSS 3" />
+              <img src="assets/html5_css3_styling.svg" draggable="false" alt="css3" title="CSS 3"  data-fill="#3070c0" />
             </li>
             <li>
-              <img src="assets/html5_3d_effects.svg" draggable="false" alt="3d transforms" title="HTML 5 3D Effects"/>
+              <img src="assets/html5_3d_effects.svg" draggable="false" alt="3d transforms" title="HTML 5 3D Effects" data-fill="#ffffff" />
             </li>
             <li>
-              <img src="assets/js.svg" alt="javascript" draggable="false" title="JavaScript"/>
+              <img src="assets/js.svg" alt="javascript" draggable="false" title="JavaScript" data-fill="#f4de05" />
             </li>
             <li>
-              <img src="assets/jquery.svg" alt="jquery" draggable="false" title="jQuery"/>
+              <img src="assets/jquery.svg" alt="jquery" draggable="false" title="jQuery" data-fill="#86cff9" />
             </li>
             <li>
-              <img src="assets/Ruby_logo.svg" alt="ruby" draggable="false" title="Ruby"/>
+              <img src="assets/Ruby_logo.svg" alt="ruby" draggable="false" title="Ruby" data-fill="#ab1b00" />
             </li>
             <li>
-              <img src="assets/1444444993_Ruby_on_Rails_2.svg" draggable="false" alt="rails" title="Ruby on Rails"/>
+              <img src="assets/1444444993_Ruby_on_Rails_2.svg" draggable="false" alt="rails" title="Ruby on Rails" data-fill="#8b2332" />
             </li>
             <li>
-              <img src="assets/Backbone.js_logo.svg" draggable="false" alt="backbone.js" title="Backbone.js"/>
+              <img src="assets/Backbone.js_logo.svg" draggable="false" alt="backbone.js" title="Backbone.js" data-fill="#2f70ba" />
             </li>
             <li>
-              <img src="assets/Postgresql_elephant.svg" draggable="false" alt="PostgresSQL" title="PostgresSQL" />
+              <img src="assets/Postgresql_elephant.svg" draggable="false" alt="PostgresSQL" title="PostgresSQL"  data-fill="#3e6693" />
             </li>
             <li>
-              <img src="assets/Git_icon.svg" draggable="false" alt="GIT" title="GIT" />
+              <img src="assets/Git_icon.svg" draggable="false" alt="GIT" title="GIT"  data-fill="#e94229" />
             </li>
             <li>
-              <img src="assets/Node.js_logo.svg" draggable="false" alt="node" title="Node.js"/>
+              <img src="assets/Node.js_logo.svg" draggable="false" alt="node" title="Node.js" data-fill="#81bf2e" />
             </li>
             <li>
-              <img src="assets/Oauth_logo.svg" draggable="false" alt="OAuth" title="OAuth"/>
+              <img src="assets/Oauth_logo.svg" draggable="false" alt="OAuth" title="OAuth" data-fill="#000000" />
             </li>
             <li>
-              <img src="assets/AmazonWebservices_Logo.svg" draggable="false" alt="Amazon AWS" title="Amazon Web Services"/>
+              <img src="assets/AmazonWebservices_Logo.svg" draggable="false" alt="Amazon AWS" title="Amazon Web Services" data-fill="#f89c00" />
             </li>
             <li>
-              <img src="assets/Sass_Logo_Color.svg" draggable="false" alt="SASS" title="SASS/SCSS"/>
+              <img src="assets/Sass_Logo_Color.svg" draggable="false" alt="SASS" title="SASS/SCSS" data-fill="#c9669c" />
             </li>
             <li>
-              <img src="assets/Heroku_logo.svg" draggable="false" alt="Heroku" title="Heroku"/>
+              <img src="assets/Heroku_logo.svg" draggable="false" alt="Heroku" title="Heroku" data-fill="#6d62aa" />
             </li>
             <li>
-              <img src="assets/Vimlogo.svg" draggable="false" alt="Vim" title="Vim"/>
+              <img src="assets/Vimlogo.svg" draggable="false" alt="Vim" title="Vim" data-fill="#1e9824"/>
             </li>
           </ul>
         </section>
@@ -182,9 +184,18 @@ I'm a web developer based in Brooklyn with a background in architecture and desi
       </footer>
       <script type="text/javascript">
       var anim = new Anim();
+      $('.skillset img').hover(function () {
+        anim.over($(this), "now");
+        var fill = this.attributes.getNamedItem("data-fill").value;
+        anim.tM.to(this, 0.5, { boxShadow: "2px 2px 0px " + fill + ", -2px -2px 0px " + fill + ", 0px 0px 4px rgba(255,255,255,1)", webkitFilter: "drop-shadow(0 0 4px " + fill + ")", filter: "drop-shadow(0 0 4px " + fill + ")" });
+      }, function () {
+        anim.out($(this), "longRandom");
+        var fill = this.attributes.getNamedItem("data-fill").value;
+        anim.tM.to(this, 1, { boxShadow: "0px 10px 100px rgba(255,255,255,0), 0px -10px 100px rgba(0,0,0,0), 0px 0px 4px rgba(0,0,0,1)", webkitFilter: "", filter: "" });
+      });
       anim.set($('.content, footer, .header-logo'), "closed");
-      anim.set($('nav'), "closed");
-      setTimeout(anim.open.bind(anim, $('.header-logo'), "normal"), 200);
+      anim.set($('nav, nav li a'), "closed");
+      setTimeout(anim.open.bind(anim, $('.header-logo'), "slower"), 500);
       setTimeout(anim.open.bind(anim, $('nav'), "slow"), 400);
       var defaultTarget = "#about";
       var openTarget = function () {
@@ -192,9 +203,19 @@ I'm a web developer based in Brooklyn with a background in architecture and desi
         window.scrollTo(0,0);
         hash = hash.length == 0 ? defaultTarget : hash;
         var $current = $(hash);
-        anim.close($('.content, footer').not($current), "normal");
-        anim.open($current, "fast");
+        anim.close($('.content, footer, .header-nav li a').not($current), "normal");
+        openTab($current);
+        anim.open($('[href="' + hash + '"]'), "fast");
       };
+      function openTab($current) {
+        anim.open($current, "fast");
+        $current.find('img, a').each(function (idx, el) {
+          $(el).trigger("mouseenter");
+          setTimeout(function () {
+            $(el).trigger("mouseleave");
+          }, 1500 + 50 * idx);
+        });
+      }
 
       openTarget();
       // $('footer, article li').click(function (e) {
@@ -209,19 +230,14 @@ I'm a web developer based in Brooklyn with a background in architecture and desi
       //   }
       // });
       $('article li, #contact li, a').hover(function () {
-        anim.over($(this), "fastest");
+        anim.over($(this), "normal");
       }, function () {
         anim.out($(this), "slowest");
       });
-      $('.skillset img').hover(function () {
-        anim.over($(this), "now");
-      }, function () {
-          anim.out($(this), "longRandom");
-      });
       $(window).on('touchstart', function() {
-        anim.over($('a'), "fast");
+        anim.over($('a'), "fastest");
         setTimeout(function() {
-          anim.out($('a'), "longRandom");
+          anim.out($('a'), "fast");
         }, 200);
       });
 
