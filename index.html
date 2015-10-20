@@ -215,7 +215,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       };
       function openTab($current) {
         anim.open($current, "fast");
-	var $els = $current.find('img, a');
+        var $els = $current.find('img, a');
         $els.each(function (idx, el) {
           $(el).trigger("mouseenter");
           setTimeout(function () {
