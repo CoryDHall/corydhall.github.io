@@ -43,7 +43,7 @@ footer.closed {
   border-radius: 2px;
 }
 .content, #about section {
-  padding: 20px;
+  padding: 20px 0;
   max-width: 100%;
   min-height: 50%;
   z-index: 10;
@@ -58,6 +58,31 @@ footer.closed {
   display: flex;
   -webkit-flex-flow: row-reverse;
   flex-flow: row-reverse;
+}
+
+#about.closed figure {
+  -webkit-transition: all 0.8s 2s linear;
+  transition: all 0.8s 2s linear;
+}
+
+#about:not(.closed) figure {
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+  clear: none;
+  float: right;
+  /*display: inline-block;*/
+  /*-webkit-filter: blur(3px);
+  filter: blur(3px);*/
+  /*margin-bottom: -400px;*/
+}
+#about:not(.closed) section {
+  float: left;
+}
+
+#about figure:hover, #about.closed figure {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+  margin-bottom: 0;
 }
 
 .content.closed * {
@@ -111,7 +136,7 @@ nav:not(.closed) {
   -webkit-transform-origin: left;
   transform-origin: left;
   text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8);
-  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);
+  /*box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);*/
   background: linear-gradient(90deg, hsla(250, 30%, 0%, 0.1), hsla(250, 30%, 10%, 0.3));
   /*margin: 0 0 0 auto;*/
 }
@@ -165,10 +190,10 @@ article h3 a:hover::after {
 
 .header-nav li a.closed.over {
   box-shadow: 0 -2px 1px hsl(235, 100%, 70%) inset;
-  text-shadow: 0 1px 1px hsl(235, 100%, 70%);
+  text-shadow: 0 0 2px hsla(235, 100%, 70%, 0.3), 0 1px 1px hsl(235, 100%, 70%);
 }
 .header-nav li a.closed:not(.over) {
-  box-shadow: 0 -100px 0px hsla(235, 100%, 70%, 0) inset;
+  box-shadow: 0 100px 0px hsla(235, 100%, 70%, .7) inset;
 }
 
 .header-nav li a:not(.closed) {
@@ -179,6 +204,7 @@ article h3 a:hover::after {
 
 .header-nav li a:not(.closed).over {
   box-shadow: 0 100px 0px hsl(235, 100%, 100%) inset;
+  text-shadow: 0 0 1.5px hsla(235, 100%, 0%, 0.3);
   color: #000;
   cursor: auto;
 }
@@ -189,35 +215,72 @@ article h3 a:hover::after {
   filter: drop-shadow(0 8px 16px);*/
 }
 
-.skillset img:hover::after {
-  content: attr("title") "";
-  display: block;
-  position: absolute;
-  font-size: 20px;
-  color: attr(data-fill);
-}
 .closed {
   overflow: hidden !important;
 }
 
 #contact {
-  -webkit-filter: drop-shadow(0 1px 2px hsla(175, 100%, 0%, 0.8));
-  filter: drop-shadow(0 1px 2px hsla(175, 100%, 0%, 0.8));
+  /*-webkit-filter: drop-shadow(0 1px 2px hsla(175, 100%, 0%, 0.8));
+  filter: drop-shadow(0 1px 2px hsla(175, 100%, 0%, 0.8));*/
 }
 
-#contact li.over {
+#contact ul.footer-links li a {
+  -webkit-filter: drop-shadow(0 0px 0px hsla(175, 0%, 0%, 0.0));
+  filter: drop-shadow(0 0px 0px hsla(175, 0%, 0%, 0.0));
+  -webkit-transition: filter .28s ease, -webkit-filter .28s ease;
+  transition: filter .28s ease, -webkit-filter .28s ease;
+}
+
+#contact ul.footer-links li.over {
   /*text-shadow: 0 8px 4px hsla(175, 100%, 50%, 1);*/
-  -webkit-filter: drop-shadow(0 0 8px hsla(175, 0%, 50%, 0.9));
-  filter: drop-shadow(0 0 8px hsla(175, 0%, 50%, 0.9));
+  /*box-shadow: 0 -10px 20px #fff inset;*/
+}
+
+#contact ul.footer-links li a.over {
+  -webkit-filter: drop-shadow(0 8px 2px hsla(175, 0%, 0%, 0.9));
+  filter: drop-shadow(0 8px 2px hsla(175, 0%, 0%, 0.9));
+}
+
+#contact li a.over {
+  text-shadow: none;
+}
+
+#contact li a:not(.over) {
+  text-shadow: none;
+
 }
 
 #resume a.over {
   /*text-shadow: 0 8px 16px hsla(175, 100%, 0%, 0.8);*/
 }
 a:not(.over) {
-  text-shadow: 0 8px 32px hsla(175, 100%, 100%, 0.0);
+  text-shadow: 0 0 2px hsla(355, 100%, 98%, 0.3), 0 8px 32px hsla(175, 100%, 100%, 0.0);
 }
 a.over {
-  text-shadow: 0 0 0 hsla(175, 100%, 100%, 0.5);
+  text-shadow: 0 0 2px hsla(235, 100%, 70%, 0.3), 0 0 0 hsla(175, 100%, 100%, 0.5);
   color: hsl(235, 100%, 70%);
+}
+.content {
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+}
+
+.project-photo, #portfolio * {
+  -webkit-transition: -webkit-filter 1.125s, filter 1.125s;
+  transition: filter 1.125s, -webkit-filter 1.125s;
+}
+
+li:hover .project-photo {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.header-menu a {
+  -webkit-transition: color 0.1s 0.25s;
+  transition: color 0.1s 0.25s;
+}
+
+#portfolio li:hover h3 {
+  -webkit-filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.8));
+  filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.8));
 }

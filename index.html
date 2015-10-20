@@ -13,7 +13,7 @@
   <script src="lib/animations.js" charset="utf-8"></script>
 </head>
 <body>
-  <header class="nav-container">
+  <header class="nav-container clearfix">
     <nav class="header-nav clearfix">
       <h1 class="header-logo"><a href="#">Cory D Hall</a></h1>
       <ul class="header-menu clearfix">
@@ -55,7 +55,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
               <img src="assets/html5_css3_styling.svg" draggable="false" alt="css3" title="CSS 3"  data-fill="#3070c0" />
             </li>
             <li>
-              <img src="assets/html5_3d_effects.svg" draggable="false" alt="3d transforms" title="HTML 5 3D Effects" data-fill="#ffffff" />
+              <img src="assets/html5_3d_effects.svg" draggable="false" alt="3d transforms" title="HTML 5 3D Effects" data-fill="rgba(255,255,255,0.5)" />
             </li>
             <li>
               <img src="assets/js.svg" alt="javascript" draggable="false" title="JavaScript" data-fill="#f4de05" />
@@ -82,7 +82,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
               <img src="assets/Node.js_logo.svg" draggable="false" alt="node" title="Node.js" data-fill="#81bf2e" />
             </li>
             <li>
-              <img src="assets/Oauth_logo.svg" draggable="false" alt="OAuth" title="OAuth" data-fill="#000000" />
+              <img src="assets/Oauth_logo.svg" draggable="false" alt="OAuth" title="OAuth" data-fill="rgba(0,0,0,0.5)" />
             </li>
             <li>
               <img src="assets/AmazonWebservices_Logo.svg" draggable="false" alt="Amazon AWS" title="Amazon Web Services" data-fill="#f89c00" />
@@ -187,11 +187,11 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       $('.skillset img').hover(function () {
         anim.over($(this), "now");
         var fill = this.attributes.getNamedItem("data-fill").value;
-        anim.tM.to(this, 0.5, { boxShadow: "2px 2px 0px " + fill + ", -2px -2px 0px " + fill + ", 0px 0px 4px rgb(0,0,0)", webkitFilter: "drop-shadow(0 0 20px " + fill + ")", filter: "drop-shadow(0 0 8px " + fill + ")" });
+        anim.tM.to(this, 0.5, { boxShadow: "2px 2px 0px " + fill + ", -2px -2px 0px " + fill + ", 0px -110px 0px " + fill + " inset, 0px 0px 4px rgb(0,0,0)", webkitFilter: "drop-shadow(0 0 20px " + fill + ")", filter: "drop-shadow(0 0 8px " + fill + ")" });
       }, function () {
         anim.out($(this), "longRandom");
         var fill = this.attributes.getNamedItem("data-fill").value;
-        anim.tM.to(this, 1, { boxShadow: "0px 0px 10px rgba(255,255,255,0), 0px 0px 10px rgba(255,255,255,0), 0px 0px 4px rgb(0,0,0)", webkitFilter: "", filter: "" });
+        anim.tM.to(this, this.width / 200, { boxShadow: "0px 0px 10px rgba(255,255,255,0), 0px 0px 10px rgba(255,255,255,0), 0px 0px 0px rgba(0,0,0,0) inset, 0px 4px 0px rgb(0,0,0)", webkitFilter: "", filter: "" });
       });
       anim.set($('.content, footer, .header-logo'), "closed");
       anim.set($('nav, nav li a'), "closed");
@@ -220,11 +220,11 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
           $(el).trigger("mouseenter");
           setTimeout(function () {
             $(el).trigger("mouseleave");
-          }, 1500 + Math.random() * 10 * $els.length * ($els.length - 1));
+          }, 2000);
         });
       }
 
-      setTimeout(openTarget, 1000);
+      setTimeout(openTarget, 1400);
       // $('footer, article li').click(function (e) {
       //   var $this = $(this);
       //   switch ($this.prop("data-state")) {
@@ -236,6 +236,9 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       //     break;
       //   }
       // });
+      // $('').hover(function () {
+      //
+      // })
       $('article li, #contact li, a').hover(function () {
         anim.over($(this), "slow");
       }, function () {
