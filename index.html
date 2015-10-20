@@ -187,11 +187,11 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       $('.skillset img').hover(function () {
         anim.over($(this), "now");
         var fill = this.attributes.getNamedItem("data-fill").value;
-        anim.tM.to(this, 0.5, { boxShadow: "2px 2px 0px " + fill + ", -2px -2px 0px " + fill + ", 0px 0px 4px rgba(255,255,255,1)", webkitFilter: "drop-shadow(0 0 4px " + fill + ")", filter: "drop-shadow(0 0 4px " + fill + ")" });
+        anim.tM.to(this, 0.5, { boxShadow: "2px 2px 0px " + fill + ", -2px -2px 0px " + fill + ", 0px 0px 4px rgb(0,0,0)", webkitFilter: "drop-shadow(0 0 20px " + fill + ")", filter: "drop-shadow(0 0 8px " + fill + ")" });
       }, function () {
         anim.out($(this), "longRandom");
         var fill = this.attributes.getNamedItem("data-fill").value;
-        anim.tM.to(this, 1, { boxShadow: "0px 10px 100px rgba(255,255,255,0), 0px -10px 100px rgba(0,0,0,0), 0px 0px 4px rgba(0,0,0,1)", webkitFilter: "", filter: "" });
+        anim.tM.to(this, 1, { boxShadow: "0px 0px 10px rgba(255,255,255,0), 0px 0px 10px rgba(255,255,255,0), 0px 0px 4px rgb(0,0,0)", webkitFilter: "", filter: "" });
       });
       anim.set($('.content, footer, .header-logo'), "closed");
       anim.set($('nav, nav li a'), "closed");
@@ -215,11 +215,12 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       };
       function openTab($current) {
         anim.open($current, "fast");
-        $current.find('img, a').each(function (idx, el) {
+        var $els = $current.find('img, a');
+        $els.each(function (idx, el) {
           $(el).trigger("mouseenter");
           setTimeout(function () {
             $(el).trigger("mouseleave");
-          }, 1500 + 50 * idx);
+          }, 1500 + Math.random() * 10 * $els.length * ($els.length - 1));
         });
       }
 
