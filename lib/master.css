@@ -64,11 +64,12 @@ html {
   min-width: 45%;
   /*max-width: 90%;*/
   white-space: nowrap;
-  -webkit-flex-direction: row-reverse wrap;
-  flex-direction: row-reverse wrap;
+  -webkit-flex: none;
+  flex: none;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
   -webkit-align-items: center;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .header-nav {
@@ -126,11 +127,8 @@ html {
 main {
   margin: 0 1px;
   padding-top: 0;
+  padding-bottom: 2em;
   position: relative;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
   display: -webkit-flex;
   display: flex;
   background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
@@ -145,7 +143,6 @@ main {
   /*-webkit-flex: auto;
   flex: auto;*/
   padding: 5px;
-  margin: 5px;
   border-radius: 3px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -161,7 +158,7 @@ article {
   box-shadow: 0 2px 4px hsla(175, 100%, 8%, 0.008);
   /*text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8);*/
   width: 100%;
-  margin: 5px 0;
+  margin: 0 0;
   border-radius: 3px;
   font-size: 13px;
   padding: 10px;
@@ -195,7 +192,16 @@ footer, article {
   color: white;
   font-weight: bold;
 }
-
+a.link-button {
+  background: hsl(235, 100%, 70%);
+  color: rgb(255,255,255);
+  border-radius: 0.25em;
+  display: block;
+}
+#resume h1 {
+  margin: 0 auto;
+  max-width: 80%;
+}
 
 #about figure {
   -webkit-flex: content;
@@ -271,7 +277,7 @@ footer {
   padding: 15px 5px;
   margin: 2px 20px 0;
   left: 0;
-  right: 30%;
+  right: 0;
   bottom: 0;
   font-size: 14px;
   overflow: hidden;
@@ -290,8 +296,8 @@ footer {
 .footer-links li{
   min-width: 20%;
   margin: 0 auto;
-  -webkit-flex: auto;
-	flex: auto;
+  -webkit-flex: content;
+	flex: content;
   white-space: nowrap;
 }
 
@@ -355,7 +361,7 @@ footer {
   white-space: normal;
 }
 
-#portfolio img {
+#portfolio .project-photo {
   max-width: 100%;
   width: 100%;
   -webkit-transform: translateY(-25%);
@@ -371,8 +377,8 @@ footer {
   padding: 2.5px;
 }
 
-.footer-links img {
-  max-height: 12px;
+.link-button img {
+  max-height: 1.2em;
   vertical-align: text-top;
   -webkit-transform: scale(2) translateX(-25%);
   transform: scale(2) translateX(-25%);
@@ -423,12 +429,15 @@ footer {
 }
 
 #portfolio li p a {
-  padding: 0;
+  padding: 0.1em;
+  margin-bottom: 1px;
+  font-size: 10px;
+  float: left;
+  width: 50%;
 }
 
 #portfolio a img {
-  max-height: 20px;
+  max-height: 1.3em;
   margin: 5px auto 0;
   display: block;
-  width: atom;
 }

@@ -16,20 +16,12 @@ body * {
 }
 .content.closed {
   box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.008);
-  background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+  /*background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);*/
   color: rgba(255,255,255,0);
   /*height: 0;*/
   width: 0;
-  /*max-height: 0;
-  min-height: 0;*/
-  padding: 0 2px 0 0;
+  padding: 0;
   margin: 0 auto;
-}
-
-.content.closed {
-  /*-webkit-transform: translateY(-1000%);
-  transform: translateY(-1000%);*/
-  /*visibility: hidden;*/
 }
 
 footer.closed {
@@ -106,12 +98,14 @@ footer.closed .legal {
 footer:not(.closed) {
   left: 10%;
   right: 10%;
-  font-size: 18px;
+  font-size: 24px;
   bottom: 50%;
   border-radius: 3px;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
 }
 footer:not(.closed) img {
-  max-height: 20px;
+  /*max-height: 20px;*/
 }
 footer:not(.closed) .footer-links {
   -webkit-flex-direction: column;
@@ -184,6 +178,8 @@ article h3 a:hover::after {
   -webkit-filter: invert(50%);
   margin-left: 10px;
   margin-bottom: 10px;
+  -webkit-transition: filter .5s 0.6s linear, -webkit-filter .5s 0.6s linear;
+  transition: filter .5s 0.6s linear, -webkit-filter .5s 0.6s linear;
   /*-webkit-filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));
   filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));*/
 }
@@ -225,8 +221,8 @@ article h3 a:hover::after {
 }
 
 #contact ul.footer-links li a {
-  -webkit-filter: drop-shadow(0 0px 0px hsla(175, 0%, 0%, 0.0));
-  filter: drop-shadow(0 0px 0px hsla(175, 0%, 0%, 0.0));
+  -webkit-filter: drop-shadow(0 0em 0em hsla(175, 0%, 0%, 0.0));
+  filter: drop-shadow(0 0em 0em hsla(175, 0%, 0%, 0.0));
   -webkit-transition: filter .28s ease, -webkit-filter .28s ease;
   transition: filter .28s ease, -webkit-filter .28s ease;
 }
@@ -236,9 +232,9 @@ article h3 a:hover::after {
   /*box-shadow: 0 -10px 20px #fff inset;*/
 }
 
-#contact ul.footer-links li a.over {
-  -webkit-filter: drop-shadow(0 8px 2px hsla(175, 0%, 0%, 0.9));
-  filter: drop-shadow(0 8px 2px hsla(175, 0%, 0%, 0.9));
+#contact ul.footer-links li a:hover {
+  -webkit-filter: drop-shadow(0 0.5em 0.1em hsla(175, 0%, 0%, 0.9));
+  filter: drop-shadow(0 0.5em 0.1em hsla(175, 0%, 0%, 0.9));
 }
 
 #contact li a.over {
@@ -253,26 +249,66 @@ article h3 a:hover::after {
 #resume a.over {
   /*text-shadow: 0 8px 16px hsla(175, 100%, 0%, 0.8);*/
 }
-a:not(.over) {
+a:not(.over, .link-button) {
   text-shadow: 0 0 2px hsla(355, 100%, 98%, 0.3), 0 8px 32px hsla(175, 100%, 100%, 0.0);
 }
 a.over {
   text-shadow: 0 0 2px hsla(235, 100%, 70%, 0.3), 0 0 0 hsla(175, 100%, 100%, 0.5);
   color: hsl(235, 100%, 70%);
 }
+a.link-button {
+  -webkit-transition: text-shadow 0s, all 0.05s;
+  transition: text-shadow 0s, all 0.05s;
+}
+a.link-button:hover {
+  -webkit-filter: drop-shadow(0 0.2em 0.4em hsla(175, 0%, 0%, 0.9));
+  filter: drop-shadow(0 0.2em 0.4em hsla(175, 0%, 0%, 0.9));
+}
+a.link-button:hover, a.link-button:active {
+  background: hsl(235, 40%, 30%);
+}
+a.link-button:active {
+  -webkit-transform: translateZ(-0.25em);
+  transform: translateZ(-0.25em);
+}
 .content {
-  -webkit-transition: all 0.8s linear;
-  transition: all 0.8s linear;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 .project-photo, #portfolio * {
-  -webkit-transition: -webkit-filter 1.125s, filter 1.125s;
-  transition: filter 1.125s, -webkit-filter 1.125s;
+  -webkit-transition: -webkit-filter 1.125s, filter 1.125s, all 0.4s linear;
+  transition: filter 1.125s, -webkit-filter 1.125s, all 0.4s linear;
+}
+
+.project-photo {
+  -webkit-filter: blur(2px) brightness(50%);
+  filter: blur(2px) brightness(50%);
 }
 
 li:hover .project-photo {
-  -webkit-filter: blur(3px);
-  filter: blur(3px);
+  -webkit-filter: blur(0px) brightness(100%);
+  filter: blur(0px) brightness(100%);
+}
+li:hover p {
+  color: hsla(255, 0%, 100%, 0.1);
+}
+
+#portfolio li .link-button {
+  opacity: 1;
+}
+
+#portfolio li:hover .link-button {
+  opacity: 0.5;
+
+}
+#portfolio li:hover p {
+  -webkit-transform: translateZ(2em);
+  transform: translateZ(2em);
+}
+#portfolio li:hover .link-button:hover {
+  opacity: 1;
+  background: transparent;
 }
 
 .header-menu a {

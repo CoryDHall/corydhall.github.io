@@ -108,7 +108,8 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
               <div><p>
                 A clone of Instagram built with Backbone on Rails
                 <br>
-                <a href="https://github.com/CoryDHall/Nstagram" target="_blank"><img src="assets/github.svg" alt="github" /></a>
+                <a href="https://github.com/CoryDHall/Nstagram" target="_blank" class="link-button" ><img src="assets/github.svg" alt="github" /></a>
+                <a href="http://stackshare.io/CoryDHall/nstagram" target="_blank" class="link-button" ><img src="assets/stackshare.svg" alt="stackshare" /></a>
               </p></div>
             </figure>
           </li>
@@ -121,7 +122,8 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
                 built with Javascript, and the HTML5 Canvas API. Works on desktop
                 and mobile.
                 <br>
-                <a href="https://github.com/CoryDHall/Asteroids" target="_blank"><img src="assets/github.svg" alt="github" /></a>
+                <a href="https://github.com/CoryDHall/Asteroids" target="_blank" class="link-button"><img src="assets/github.svg" alt="github" /></a>
+                <a href="http://stackshare.io/CoryDHall/asteroids" target="_blank" class="link-button" ><img src="assets/stackshare.svg" alt="stackshare" /></a>
               </p></div>
             </figure>
           </li>
@@ -131,7 +133,8 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
               <img src="assets/ghost.png" alt="Ghost" class="project-photo">
               <div><p>
                 A simple word game with a complex, expandable player interface, and a set of AI players implementing machine learning algorithms of varying complexity.
-                <a href="https://github.com/CoryDHall/ghost" target="_blank"><img src="assets/github.svg" alt="github" /></a>
+                <br>
+                <a href="https://github.com/CoryDHall/ghost" target="_blank" class="link-button"><img src="assets/github.svg" alt="github" /></a>
               </p></div>
             </figure>
           </li>
@@ -141,38 +144,45 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
               <img src="assets/grid.png" alt="Grid" class="project-photo">
               <div><p>
                 A ruby module that packages together common 2d Array operations into easy to use methods.
-                <a href="https://github.com/CoryDHall/grid_module" target="_blank"><img src="assets/github.svg" alt="github" /></a>
+                <br>
+                <a href="https://github.com/CoryDHall/grid_module" target="_blank" class="link-button"><img src="assets/github.svg" alt="github" /></a>
               </p></div>
             </figure>
           </li>
         </ul>
       </article>
       <article class="content modal" id="resume">
-        <h1><a href="assets/cory_hall_resume_2015_10.pdf">Download My Resume!</a></h1>
+        <h1><a href="assets/cory_hall_resume_2015_10.pdf" class="link-button" target="_blank">Download My Resume!</a></h1>
       </article>
     </main>
     <footer id="contact">
       <ul class="footer-links clearfix">
         <li>
-          <a href="mailto:corydantehall@gmail.com?subject=Hey! I was checking out your website…" target="_blank">
+          <a href="mailto:corydantehall@gmail.com?subject=Hey! I was checking out your website…" target="_blank" class="link-button" >
             <img src="assets/paperplane.svg" alt="email" />
             Email
           </a>
         </li>
         <li>
-          <a href="http://github.com/CoryDHall" target="_blank">
+          <a href="http://github.com/CoryDHall" target="_blank" class="link-button" >
             <img src="assets/github.svg" alt="github" />
             GitHub
           </a>
         </li>
         <li>
-          <a href="http://linkedin.com/in/corydantehall" target="_blank">
+          <a href="http://stackshare.io/CoryDHall" target="_blank" class="link-button" >
+            <img src="assets/stackshare.svg" alt="stackshare" />
+            Stackshare
+          </a>
+        </li>
+        <li>
+          <a href="http://linkedin.com/in/corydantehall" target="_blank" class="link-button" >
             <img src="assets/linkedin.svg" alt="linkedin" />
             LinkedIn
           </a>
         </li>
         <li>
-          <a>
+          <a class="link-button" >
             <img src="assets/phone.svg" alt="phone" />
             (757) 560-2155
           </a>
@@ -215,7 +225,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       };
       function openTab($current) {
         anim.open($current, "fast");
-        var $els = $current.find('img, a');
+        var $els = $current.find('.skillset img');
         $els.each(function (idx, el) {
           $(el).trigger("mouseenter");
           setTimeout(function () {
@@ -239,7 +249,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       // $('').hover(function () {
       //
       // })
-      $('article li, #contact li, a').hover(function () {
+      $('article li, #contact li, a:not(.link-button)').hover(function () {
         anim.over($(this), "slow");
       }, function () {
         anim.out($(this), "fast");
