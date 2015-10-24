@@ -1,6 +1,10 @@
-.content, footer {
+footer {
   -webkit-transform-origin: bottom;
   transform-origin: bottom;
+}
+.content {
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 body {
   -webkit-transform-style: preserve-3d;
@@ -15,13 +19,17 @@ body * {
   perspective-origin: bottom center;
 }
 .content.closed {
-  box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.008);
   /*background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);*/
-  color: rgba(255,255,255,0);
+  /*color: rgba(255,255,255,0);*/
   /*height: 0;*/
   width: 0;
-  padding: 0;
-  margin: 0 auto;
+  /*padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  left: -10%;*/
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
 }
 
 footer.closed {
@@ -52,14 +60,17 @@ footer.closed {
   flex-flow: row-reverse;
 }
 
+#about > * {
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+}
+
 #about.closed figure {
-  -webkit-transition: all 0.8s 2s linear;
-  transition: all 0.8s 2s linear;
+  -webkit-transition-delay: .2s;
+  transition-delay: .2s;
 }
 
 #about:not(.closed) figure {
-  -webkit-transition: all 0.8s linear;
-  transition: all 0.8s linear;
   clear: none;
   float: right;
   /*display: inline-block;*/
@@ -72,13 +83,15 @@ footer.closed {
 }
 
 #about figure:hover, #about.closed figure {
-  -webkit-filter: blur(0);
-  filter: blur(0);
   margin-bottom: 0;
 }
 
 .content.closed * {
   /*visibility: collapse;*/
+  -webkit-filter: none;
+  filter: none;
+  -webkit-transform: none;
+  transform: none;
 }
 
 
@@ -117,34 +130,28 @@ footer:not(.closed) li {
 .over {
 }
 article {
-  -webkit-transform: rotateZ(0deg);
-  transform: rotateZ(0deg);
   -webkit-transform-origin: top;
   transform-origin: top;
 }
 .over.closed {
 }
 nav:not(.closed) {
-  /*-webkit-transform: rotateZ(6deg);
-  transform: rotateZ(6deg);*/
-  -webkit-transform-origin: left;
-  transform-origin: left;
   text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8);
   /*box-shadow: 0 1px 2px hsla(175, 100%, 8%, 0.8);*/
   background: linear-gradient(90deg, hsla(250, 30%, 0%, 0.1), hsla(250, 30%, 10%, 0.3));
   /*margin: 0 0 0 auto;*/
 }
 nav.closed {
-  -webkit-transform: rotateZ(0deg);
-  transform: rotateZ(0deg);
+  box-shadow: 0 0 0 hsla(175, 100%, 8%, 0);
+}
+nav {
   -webkit-transform-origin: left;
   transform-origin: left;
-  box-shadow: 0 0 0 hsla(175, 100%, 8%, 0);
 }
 
 .header-logo.closed {
-  -webkit-transform: scale(0) translateX(-250%);
-  transform: scale(0) translateX(-250%);
+  -webkit-transform: scale(0.2) translateX(-250%);
+  transform: scale(0.2) translateX(-250%);
   -webkit-transform-origin: center;
   transform-origin: center;
   margin-left: -10%;
@@ -178,8 +185,8 @@ article h3 a:hover::after {
   -webkit-filter: invert(50%);
   margin-left: 10px;
   margin-bottom: 10px;
-  -webkit-transition: filter .5s 0.6s linear, -webkit-filter .5s 0.6s linear;
-  transition: filter .5s 0.6s linear, -webkit-filter .5s 0.6s linear;
+  /*-webkit-transition: filter 0s 0.6s linear, -webkit-filter 0s 0.6s linear;
+  transition: filter 0s 0.6s linear, -webkit-filter 0s 0.6s linear;*/
   /*-webkit-filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));
   filter: drop-shadow(0 2px 4px hsla(175, 100%, 0%, 0.9));*/
 }
@@ -272,13 +279,13 @@ a.link-button:active {
   transform: translateZ(-0.25em);
 }
 .content {
-  -webkit-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
+  -webkit-transition: all 0.2s 0s linear, width 0.1s 0.25s, margin 0s, left 0s, padding 0s;
+  transition: all 0.2s 0s linear, width 0.1s 0.25s, margin 0s, left 0s, padding 0s;
 }
 
 .project-photo, #portfolio * {
-  -webkit-transition: -webkit-filter 1.125s, filter 1.125s, all 0.4s linear;
-  transition: filter 1.125s, -webkit-filter 1.125s, all 0.4s linear;
+  -webkit-transition: -webkit-filter 1.125s 0.25s, filter 1.125s 0.25s, -webkit-transform 0.2s linear, transform 0.2s linear, opacity 0.4s linear, background 0.4s linear, color 0.2s 0.2s;
+  transition: filter 1.125s 0.25s, -webkit-filter 1.125s 0.25s, -webkit-transform 0.2s linear, transform 0.2s linear, opacity 0.4s linear, background 0.4s linear, color 0.2s 0.2s;
 }
 
 .project-photo {
@@ -312,8 +319,8 @@ li:hover p {
 }
 
 .header-menu a {
-  -webkit-transition: color 0.1s 0.25s;
-  transition: color 0.1s 0.25s;
+  -webkit-transition: color 0.1s 0.2s;
+  transition: color 0.1s 0.2s;
 }
 
 #portfolio li:hover h3 {

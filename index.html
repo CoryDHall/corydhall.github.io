@@ -44,7 +44,7 @@
         <section>
           <h2>Hi, I'm Cory</h2>
           <p>
-I'm a <em>web developer</em> based in Brooklyn with a background in architecture and design. I get off on Big Data and Micro-Optimization and I believe great <em>process</em> begets great <em>design</em>—<strong>Ove Arup</strong> says it best:
+I'm a <em>software developer</em> based in Brooklyn with a background in architecture. I get off on DRY code, Big Data and Micro-Optimization. Great <em>process</em> begets great <em>design</em>—<strong>Ove Arup</strong> says it best:
 <blockquote>Engineering problems are under-defined, there are many solutions, good, bad and indifferent. The art is to arrive at a good solution. This is a creative activity, involving imagination, intuition and deliberate choice.</blockquote>
           </p>
           <ul class="skillset">
@@ -152,7 +152,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
         </ul>
       </article>
       <article class="content modal" id="resume">
-        <h1><a href="assets/cory_hall_resume_2015_10.pdf" class="link-button" target="_blank">Download My Resume!</a></h1>
+        <h1><a href="assets/cory_hall_resume_2015_10.pdf" class="link-button" target="_blank">View My Resume!</a></h1>
       </article>
     </main>
     <footer id="contact">
@@ -184,7 +184,7 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
         <li>
           <a class="link-button" >
             <img src="assets/phone.svg" alt="phone" />
-            (757) 560-2155
+            757.560.2155
           </a>
         </li>
       </ul>
@@ -195,18 +195,17 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
       <script type="text/javascript">
       var anim = new Anim();
       $('.skillset img').hover(function () {
-        anim.over($(this), "now");
-        var fill = this.attributes.getNamedItem("data-fill").value;
-        anim.tM.to(this, 0.5, { boxShadow: "2px 2px 0px " + fill + ", -2px -2px 0px " + fill + ", 0px -110px 0px " + fill + " inset, 0px 0px 4px rgb(0,0,0)", webkitFilter: "drop-shadow(0 0 20px " + fill + ")", filter: "drop-shadow(0 0 8px " + fill + ")" });
-      }, function () {
-        anim.out($(this), "longRandom");
+        anim.out($(this), "slowest");
         var fill = this.attributes.getNamedItem("data-fill").value;
         anim.tM.to(this, this.width / 200, { boxShadow: "0px 0px 10px rgba(255,255,255,0), 0px 0px 10px rgba(255,255,255,0), 0px 0px 0px rgba(0,0,0,0) inset, 0px 4px 0px rgb(0,0,0)", webkitFilter: "", filter: "" });
+      }, function () {
+        anim.over($(this), "now");
+        var fill = this.attributes.getNamedItem("data-fill").value;
+        anim.tM.to(this, 0.5, { boxShadow: "2px 2px 0px " + fill + ", -2px -2px 0px " + fill + ", 0px -110px 0px " + fill + " inset, 0px 0px 4px rgb(0,0,0)", webkitFilter: "drop-shadow(0 0 20px " + fill + ")", filter: "drop-shadow(0 0 20px " + fill + ")" });
       });
-      anim.set($('.content, footer, .header-logo'), "closed");
-      anim.set($('nav, nav li a'), "closed");
-      setTimeout(anim.open.bind(anim, $('.header-logo'), "slower"), 500);
-      setTimeout(anim.open.bind(anim, $('nav'), "slow"), 400);
+      anim.set($('.header-logo, .header-nav li a, nav, .content, footer'), "closed");
+      setTimeout(anim.open.bind(anim, $('.header-logo'), "slower"), 1200);
+      setTimeout(anim.open.bind(anim, $('nav'), "slow"), 1000);
       var defaultTarget = "#about";
       oldTarget = null;
       var openTarget = function () {
@@ -218,23 +217,24 @@ I'm a <em>web developer</em> based in Brooklyn with a background in architecture
         // window.scrollTo(0,0);
         hash = hash.length == 0 ? defaultTarget : hash;
         var $current = $(hash);
-        anim.close($('.content, footer, .header-nav li a').not($current), "fastest");
-        openTab($current);
-        setTimeout(anim.open.bind(anim, $('[href="' + hash + '"]'), "fast"), 100);
+        anim.close($('.content, footer, .header-nav li a').not($current), "slow");
+        setTimeout(anim.open.bind(anim, $('[href="' + hash + '"]'), "slow"), 0);
         oldTarget = hash;
+        openTab($current);
       };
       function openTab($current) {
-        anim.open($current, "fast");
+        anim.open($current, "faster");
         var $els = $current.find('.skillset img');
-        $els.each(function (idx, el) {
-          $(el).trigger("mouseenter");
-          setTimeout(function () {
-            $(el).trigger("mouseleave");
-          }, 2000);
-        });
+        setTimeout(function () {
+          $els.each(function (idx, el) {
+            setTimeout(function () {
+              $(el).trigger("mouseleave");
+            }, Anim.speed["slowest"] * 1000 + Anim.speed["longRandom"] * 100 * idx);
+          });
+        }, Anim.speed["slowest"] * 1000);
       }
-
-      setTimeout(openTarget, 1400);
+      openTarget();
+      // setTimeout(openTarget, 0);
       // $('footer, article li').click(function (e) {
       //   var $this = $(this);
       //   switch ($this.prop("data-state")) {
