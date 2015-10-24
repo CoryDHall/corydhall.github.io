@@ -43,7 +43,7 @@ footer.closed {
   border-radius: 2px;
 }
 .content, #about section {
-  padding: 20px 0;
+  padding: 20px 5px;
   max-width: 100%;
   min-height: 50%;
   z-index: 10;
