@@ -37,7 +37,7 @@ footer.closed {
   transform: scaleZ(0.5);
 }
 .content:not(.closed), footer:not(.closed), #about section, .content:not(.closed) li {
-  box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.0), 0 -2px 0 hsla(175, 70%, 40%, 0.0) inset;
+  /*box-shadow: 0 8px 16px hsla(175, 0%, 8%, 0.0), 0 -2px 0 hsla(175, 70%, 40%, 0.0) inset;*/
   text-shadow: 0 4px 8px hsla(175, 10%, 8%, 0.4);
   background: rgba(0,0,0,0.01);
   border-radius: 2px;
@@ -61,8 +61,8 @@ footer.closed {
 }
 
 #about > * {
-  -webkit-transition: all 0.8s linear;
-  transition: all 0.8s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 #about.closed figure {
@@ -88,10 +88,10 @@ footer.closed {
 
 .content.closed * {
   /*visibility: collapse;*/
-  -webkit-filter: none;
+  /*-webkit-filter: none;
   filter: none;
   -webkit-transform: none;
-  transform: none;
+  transform: none;*/
 }
 
 
@@ -279,13 +279,18 @@ a.link-button:active {
   transform: translateZ(-0.25em);
 }
 .content {
-  -webkit-transition: all 0.2s 0s linear, width 0.1s 0.25s, margin 0s, left 0s, padding 0s;
-  transition: all 0.2s 0s linear, width 0.1s 0.25s, margin 0s, left 0s, padding 0s;
+  -webkit-transition: all 0.2s 0s linear, width 0.1s 0s, margin 0s, left 0s, padding 0s;
+  transition: all 0.2s 0s linear, width 0.1s 0s, margin 0s, left 0s, padding 0s;
 }
 
 .project-photo, #portfolio * {
-  -webkit-transition: -webkit-filter 1.125s 0.25s, filter 1.125s 0.25s, -webkit-transform 0.2s linear, transform 0.2s linear, opacity 0.4s linear, background 0.4s linear, color 0.2s 0.2s;
-  transition: filter 1.125s 0.25s, -webkit-filter 1.125s 0.25s, -webkit-transform 0.2s linear, transform 0.2s linear, opacity 0.4s linear, background 0.4s linear, color 0.2s 0.2s;
+  -webkit-transition: all 0.2s 0s, -webkit-filter 1.125s 0.5s, filter 1.125s 0.5s, -webkit-transform 0.2s linear, transform 0.2s linear, opacity 0.4s linear, background 0.4s linear, color 0.2s 0.2s;
+  transition: all 0.2s 0s, filter 1.125s 0.5s, -webkit-filter 1.125s 0.5s, -webkit-transform 0.2s linear, transform 0.2s linear, opacity 0.4s linear, background 0.4s linear, color 0.2s 0.2s;
+}
+
+.closed .project-photo, .closed #portfolio * {
+  -webkit-transition: -webkit-filter 0s 0s;
+  transition: filter 0s 0s;
 }
 
 .project-photo {
@@ -316,6 +321,12 @@ li:hover p {
 #portfolio li:hover .link-button:hover {
   opacity: 1;
   background: transparent;
+}
+
+#portfolio li:hover {
+  transform: scale(1.25);
+  z-index: 100;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
 }
 
 .header-menu a {

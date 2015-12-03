@@ -23,13 +23,13 @@ ul {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: sans-serif;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 100%;
-  background-color: hsl(205, 55%, 10%);
+  background-color: hsl(235, 55%, 10%);
   /*background-image: linear-gradient(45deg, hsl(355, 4%, 25%), hsl(235, 95%, 50%)), linear-gradient(135deg, hsl(355, 4%, 25%), hsl(235, 5%, 2%));
   background-position: 100% 100%;
   background-size: 10% 100px;*/
@@ -331,6 +331,7 @@ footer {
   overflow: hidden;
   padding: 0;
   position: relative;
+  max-width: 300px;
 }
 
 #portfolio h3 {
@@ -392,6 +393,7 @@ footer {
 
 .skillset img {
   height: 100px;
+  width: auto;
 }
 
 #about ul.skillset {
@@ -440,4 +442,8 @@ footer {
   max-height: 1.3em;
   margin: 5px auto 0;
   display: block;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
