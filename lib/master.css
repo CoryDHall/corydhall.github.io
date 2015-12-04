@@ -29,10 +29,12 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  background-color: hsl(235, 55%, 10%);
-  /*background-image: linear-gradient(45deg, hsl(355, 4%, 25%), hsl(235, 95%, 50%)), linear-gradient(135deg, hsl(355, 4%, 25%), hsl(235, 5%, 2%));
+  background-color: hsl(35, 5%, 80%);
+  background-image: repeating-radial-gradient(circle at center, hsla(355, 0%, 00%, 1) 19%, hsla(235, 0%, 40%, 1) 20%);
   background-position: 100% 100%;
-  background-size: 10% 100px;*/
+  background-size: 30px 100px;
+  background-attachment: scroll;
+  /*background-size: cover;*/
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -53,8 +55,8 @@ html {
 }
 
 .nav-container {
-  background-color: hsla(175, 100%, 4%, 0.1);
-  box-shadow: 0 5px 10px hsla(175, 100%, 8%, 0.0);
+  /*background-color: hsla(175, 100%, 4%, 0.1);*/
+  /*box-shadow: 0 5px 0px hsla(175, 100%, 8%, 0.8);*/
   /*border-bottom: 1px solid hsla(355, 100%, 98%, 0.5);*/
   position: relative;
   top: 0px;
@@ -109,7 +111,7 @@ html {
   transform-origin: left;
   position: relative;
   margin: 10px auto;
-  text-shadow: 0 2px 1px hsla(175, 100%, 8%, 0.8);
+  text-shadow: 0 2px 0px hsla(175, 100%, 8%, 0.8);
 }
 
 .header-logo a {
@@ -131,11 +133,12 @@ main {
   position: relative;
   display: -webkit-flex;
   display: flex;
-  background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+  /*background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));*/
   /*-webkit-flex-direction: column;
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;*/
+  background-image: repeating-radial-gradient(circle at center, hsla(355, 0%, 00%, 1) 10px, hsla(235, 0%, 40%, 0) 11px);
   overflow: hidden;
 }
 
@@ -147,6 +150,7 @@ main {
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
+  color: #fff;
 }
 
 .content img {
@@ -155,7 +159,7 @@ main {
 }
 
 article {
-  box-shadow: 0 2px 4px hsla(175, 100%, 8%, 0.008);
+  /*box-shadow: 0 2px 0px hsla(175, 100%, 8%, 0.008);*/
   /*text-shadow: 0 1px 1px hsla(175, 100%, 8%, 0.8);*/
   width: 100%;
   margin: 0 0;
@@ -188,18 +192,20 @@ article {
 
 footer, article {
   text-align: center;
-  background: rgba(0,0,0,0.0);
+  /*background-image: radial-gradient(circle at center, hsla(355, 0%, 00%, 1) 19%, transparent 20%);
+  background-position: 100% 100%;*/
+  /*background-size: 12px 12px;*/
   color: white;
   font-weight: bold;
 }
 a.link-button {
-  background: hsl(235, 100%, 70%);
+  /*box-shadow: 0 -3em 0 hsl(235, 0%, 30%) inset;*/
   color: rgb(255,255,255);
-  border-radius: 0.25em;
+  /*border-radius: 0.25em;*/
   display: block;
 }
 #resume h1 {
-  margin: 0 auto;
+  margin: 25% auto;
   max-width: 80%;
 }
 
@@ -216,8 +222,10 @@ a.link-button {
 }
 
 #about figure img {
-  box-shadow: 0 4px 8px hsla(175, 0%, 8%, 0.8);
+  box-shadow: 0 4px 0px hsla(175, 0%, 8%, 0.8);
   margin: 0 10px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #about section {
@@ -229,30 +237,51 @@ a.link-button {
 #about section p {
   text-align: left;
   font-weight: 300;
+  background: black;
 }
+
 blockquote {
   font-size: 28px;
   font-weight: 200;
-  opacity: 0.7;
-  padding: 5px 30px 30px 60px;
+  opacity: 1;
+  padding: 1em 1em;
+  line-height: 0.75em;
+  /*-webkit-text-emphasis: triangle cyan;
+  text-emphasis: triangle cyan;
+  text-decoration: underline;*/
+  /*-webkit-text-decoration-color: magenta;
+  text-decoration-color: magenta;*/
+  background: black;
+  margin: 30px 10px 60px 120px;
+  font-style: oblique;
+  letter-spacing: 2px;
 }
 #about em {
   font-style: normal;
-  font-weight: bolder;
+  font-weight: 800;
 }
 #resume h1 {
   font-size: 60px;
   font-weight: bold;
+  /*background: #03f;*/
 }
 
 
 .content h2 {
+  text-decoration: overline;
+  text-transform: lowercase;
+  background: black;
   text-align: left;
   font-size: 60px;
-  padding-bottom: 30px;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: auto;
+  max-width: 600px;
+  font-weight: 900;
 }
 
 .content p {
+  padding: 20px;
   font-size: 20px;
   font-weight: 200;
   text-align: right;
@@ -272,7 +301,7 @@ article h3 {
 footer {
   -webkit-flex: auto;
   flex: auto;
-  box-shadow: 0 2px 2px hsla(175, 100%, 8%, 0.008);
+  box-shadow: 0 2px 0px hsla(175, 100%, 8%, 0.008);
   position: fixed;
   padding: 15px 5px;
   margin: 2px 20px 0;
@@ -318,6 +347,7 @@ footer {
 }
 
 #portfolio.content li {
+  float: left;
   -webkit-flex: 1 0.5 auto;
   flex: auto;
   margin: 0 5px 5px;
@@ -332,6 +362,7 @@ footer {
   padding: 0;
   position: relative;
   max-width: 300px;
+  background-image: repeating-radial-gradient(circle at center, black 5px, transparent 6px, transparent 10px);
 }
 
 #portfolio h3 {
@@ -386,14 +417,14 @@ footer {
 }
 
 .legal {
-  color: hsl(235, 5%, 80%);
+  color: hsl(235, 5%, 100%);
   font-size: 11px;
   padding: 5px 0 10px;
 }
 
 .skillset img {
   height: 100px;
-  width: auto;
+  /*width: auto;*/
 }
 
 #about ul.skillset {
@@ -405,8 +436,6 @@ footer {
   justify-content: space-around;
   margin-bottom: 40px;
   /*background: #000;*/
-  border-radius: 4px;
-  box-shadow: 0 -2px 0 rgba(255,255,255,0.5), 0 -2px 0 rgba(255,255,255,0.5) inset;
   padding: 20px 40px;
 }
 .skillset:before {
@@ -417,7 +446,7 @@ footer {
   font-size: 20px;
   line-height: 20px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: #fff;
   -webkit-transform: scale(2);
   transform: scale(2);
 }
