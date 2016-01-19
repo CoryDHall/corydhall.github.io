@@ -166,7 +166,7 @@ nav {
 
 article h3 a:hover::after {
   content: "";
-  background-image: url("../assets/fwrd_arrow.svg");
+  background-image: url("../assets/icons/fwrd_arrow.svg");
   background-size: contain;
   float: right;
   display: block;
