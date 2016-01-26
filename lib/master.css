@@ -97,7 +97,7 @@ html {
 
 .header-nav a {
   display: block;
-  padding: 10px 15px;
+  padding: 25px 15px;
   font-size: 20px;
   line-height: 20px;
 }
@@ -117,7 +117,7 @@ html {
 .header-logo a {
   padding: 5px 7.5px 0;
   font-size: 40px;
-  line-height: 10px;
+  line-height: 40px;
 }
 
 .header-logo, .header-menu {

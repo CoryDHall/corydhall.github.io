@@ -274,11 +274,11 @@ a.link-button, #contact ul.footer-links li a {
   /*box-shadow: 0 -10px 20px #fff inset;*/
 }
 .header-nav a:hover {
-  -webkit-filter: invert(0%) drop-shadow(-4px -4px 0 hsla(60, 100%, 50%, 0.6)) drop-shadow(8px -8px 0 hsla(0, 100%, 0%, 0.6)) drop-shadow(-2px 2px 0 hsla(180, 100%, 50%, 0.6)) drop-shadow(6px 6px 0 hsla(300, 100%, 50%, 0.6));
-  filter: invert(0%) drop-shadow(-4px -4px 0 hsla(60, 100%, 50%, 0.6)) drop-shadow(8px -8px 0 hsla(0, 100%, 0%, 0.6)) drop-shadow(-2px 2px 0 hsla(180, 100%, 50%, 0.6)) drop-shadow(6px 6px 0 hsla(300, 100%, 50%, 0.6));
+  /*-webkit-filter: invert(0%) drop-shadow(-4px -4px 0 hsla(60, 100%, 50%, 0.6)) drop-shadow(8px -8px 0 hsla(0, 100%, 0%, 0.6)) drop-shadow(-2px 2px 0 hsla(180, 100%, 50%, 0.6)) drop-shadow(6px 6px 0 hsla(300, 100%, 50%, 0.6));
+  filter: invert(0%) drop-shadow(-4px -4px 0 hsla(60, 100%, 50%, 0.6)) drop-shadow(8px -8px 0 hsla(0, 100%, 0%, 0.6)) drop-shadow(-2px 2px 0 hsla(180, 100%, 50%, 0.6)) drop-shadow(6px 6px 0 hsla(300, 100%, 50%, 0.6));*/
   color: hsl(0, 0%, 0%);
 }
-.header-nav li a:not(.closed):hover,
+/*.header-nav li a:not(.closed):hover,*/
 a.link-button:hover, #contact ul.footer-links li a:hover {
 
   background-image: repeating-radial-gradient(circle at center, hsl(0, 0%, 40%) 20%, hsla(235, 0%, 0%, 0) 21%);
