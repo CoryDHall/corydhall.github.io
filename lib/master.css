@@ -295,7 +295,8 @@ article {
 
 article h3 {
   font-size: 28px;
-  padding: 0;
+  padding: 0px;
+  font-weight: normal;
 }
 
 footer {
@@ -343,12 +344,14 @@ footer {
 }
 #portfolio.content li figure {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  width: 300px;
+  height: 300px;
 }
 
 #portfolio.content li {
   float: left;
-  -webkit-flex: 1 0.5 auto;
+  -webkit-flex: 1 1 auto;
   flex: auto;
   margin: 0 5px 5px;
   /*width: 100%;*/
@@ -358,7 +361,7 @@ footer {
   max-height: 100%;
   height: auto;
   word-wrap: normal;
-  overflow: hidden;
+  /*overflow: hidden;*/
   padding: 0;
   position: relative;
   max-width: 300px;
@@ -368,13 +371,15 @@ footer {
 #portfolio h3 {
   position: absolute;
   z-index: 10;
+  background: #000;
+  padding: 0;
 }
 
 #portfolio.content li div {
   text-align: left;
   position: absolute;
   bottom: 0;
-  background: linear-gradient(hsla(0,0%,0%, 0.3), hsla(0,0%,0%, 0.2), hsla(0,0%,0%, 0.4), hsla(0,0%,0%, 0.8));
+  /*background: linear-gradient(hsla(0,0%,0%, 0.3), hsla(0,0%,0%, 0.2), hsla(0,0%,0%, 0.4), hsla(0,0%,0%, 0.8));*/
   top: 0;
   left: 0;
   right: 0;
@@ -382,23 +387,24 @@ footer {
 
 #portfolio.content li p {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 5%;
+  left: 5%;
+  right: 20%;
   text-align: left;
   font-size: 15px;
   font-weight: bold;
   line-height: 16px;
-  padding: 5px 10px 5px;
+  padding: 5px 0;
   white-space: normal;
+  background: #000;
 }
 
 #portfolio .project-photo {
-  max-width: 100%;
-  width: 100%;
-  -webkit-transform: translateY(-25%);
-  transform: translateY(-25%);
-  height: auto;
+  /*max-width: 100%;
+  width: 100%;*/
+  /*-webkit-transform: translateY(-25%);
+  transform: translateY(-25%);*/
+  /*height: auto;*/
   display: block;
   /*max-height: 300px;
   max-width: 300px;*/
@@ -465,17 +471,22 @@ footer {
   padding: 0;
 }
 
-#portfolio li p a {
+#portfolio li p a.link-button {
   padding: 0.1em;
   margin-bottom: 1px;
   font-size: 10px;
   float: left;
-  width: 50%;
+  width: 60%;
+  position: relative;
+  right: -60px;
+  left: 0;
 }
 
 #portfolio a img {
   max-height: 1.3em;
-  margin: 5px auto 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   display: block;
 }
 
